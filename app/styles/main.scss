@@ -1,0 +1,95 @@
+$icon-font-path:"../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+// add files to customize bootstrap
+@import "_custom-fonts.scss";
+@import "_custom-variables.scss";
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+// your own css/scss
+// your own css/scss ends
+//Logo
+.navbar-brand {
+  padding: 0 0 0 0;
+  display: flex;
+  /* flex-direction: column;*/
+  align-items: center;
+  /* justify-content: center;*/
+  opacity: 0.8;
+}
+.navbar-brand:hover {
+  opacity: 1;
+}
+.navbar-brand>img {
+  max-height: 100%;
+  height: 80%;
+  width: auto;
+  margin: auto;
+  vertical-align: middle;
+  display: block;
+  margin: 0px auto;
+}
+.navbar-left {
+  margin-left: 20px;
+}
+.navbar-inverse .navbar-nav > li {
+  opacity: 0.8;
+}
+.navbar-inverse .navbar-nav > li:hover {
+  opacity: 1;
+}
+.navbar-inverse .navbar-nav > li > a {
+  font-family: Lato;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1026px) {
+    .navbar-inverse .navbar-nav > li > a [class*="title"] {
+      display: none;
+    }
+  }
+
+.navbar-inverse {
+  margin-bottom: 0;
+  border-radius: 0;
+  padding-left: 65px;
+  padding-right: 45px;
+}
+//2nd-nav-bar
+.sticky-nav {
+  background-color: white;
+}
+.sticky-nav >ul {
+  padding: 1.5% 0 1% 0;
+}
+.sticky-nav >ul >li {
+  font-family: Lato;
+  color: #6B6A6A;
+  display: inline;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.sticky-nav >ul >li >a {
+  color: #666767;
+  text-decoration: none;
+}
+//Main
+ .main {
+  padding-top: 60px;
+  background-color: #F7F5F5;
+  padding-left: 45px;
+  padding-right: 45px;
+     padding-bottom: 60px;
+}
+//Footer
+footer {
+  background-color: #ffffff;
+  font-family: Lato;
+  line-height: 10px;
+}
+.intro {
+  font-weight: bold;
+}
