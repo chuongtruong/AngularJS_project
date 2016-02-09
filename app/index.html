@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="myApp">
 
 <head>
   <meta charset="utf-8">
@@ -27,155 +27,9 @@
 </head>
 
 <body>
-  <header>
-    <!--Nav bar-->
-
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <!--
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
--->
-
-          <a class="navbar-brand" href="#">
-
-            <img class="img-responsive" src="Photo/logo.png" />
-          </a>
-        </div>
-
-        <div class="caigido">
-          <ul class="nav navbar-nav navbar-left">
-            <li class="active">
-              <a href="#"><span class="glyphicon glyphicon-picture"></span> <span class="title">Photo</span></a>
-            </li>
-            <li>
-              <a href="#"><span class="glyphicon glyphicon-film"></span> <span class="title">Video</span></a>
-            </li>
-
-            <li>
-              <a href="#"><span class="glyphicon glyphicon-headphones"></span> <span class="title">Sound</span></a>
-            </li>
-
-          </ul>
-
-        </div>
-        <!--          Nav bar right-->
-
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="#"><span class="glyphicon glyphicon-cloud-upload"></span> <span class="title">Upload</span></a>
-          </li>
-          <li>
-            <a href="#"><span class="glyphicon glyphicon-pencil"></span> <span class="title">Sign up</span></a>
-          </li>
-          <li>
-            <a href="#"><span class="glyphicon glyphicon-user"></span> <span class="title">Login</span></a>
-          </li>
+<div ui-view=""></div>
 
 
-
-        </ul>
-
-
-      </div>
-    </nav>
-
-  </header>
-
-  <!--Main-->
-  <div class="container-fluid">
-    <div align="center" class="sticky-nav">
-      <ul>
-        <li>
-          <a href="#">Newest</a>
-        </li>
-        <li>
-          <a href="#">popular</a>
-        </li>
-        <li>
-          <a href="#">top-rated</a>
-        </li>
-        <li>
-          <a href="#">discussing</a>
-        </li>
-
-      </ul>
-
-    </div>
-  </div>
-  <div class="main">
-
-    <div class="container-fluid">
-      <div id="mygallery">
-
-
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/e.jpg" />
-        </a>
-        <a href="path/to/myimage1_original.jpg">
-          <img alt="Title 1" src="Photo/c.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/a.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/h.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/j.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/f.jpg" />
-        </a>
-        <a href="path/to/myimage1_original.jpg">
-          <img alt="Title 1" src="Photo/a.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/b.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/c.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/d.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/e.jpg" />
-        </a>
-        <a href="path/to/myimage1_original.jpg">
-          <img alt="Title 1" src="http://www.download-free-wallpaper.com/img88/kchhtlxfcpbwjhnnvvtq.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/a.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/h.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/j.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-          <img alt="Title 2" src="Photo/f.jpg" />
-        </a>
-
-      </div>
-    </div>
-  </div>
-
-  <!--    Footer-->
-  <footer class="footer">
-    <div align="center" class="container">
-      <h4 class="intro">This website is execusively made for our 3rd period.</h3>
-        <p>Hyesoo Park, Yasamin Salami, Chuong Truong</p>
-        <p> 2016 </p>
-        </div>
-
-    </footer>
 
 
 
@@ -184,6 +38,7 @@
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -201,11 +56,13 @@
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <!-- endbuild -->
 
 
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
+  <script src="scripts/app.js"></script>
   <!-- endbuild -->
 
   <!--Justified Gallery-->
