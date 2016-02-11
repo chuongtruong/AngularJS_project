@@ -1,0 +1,76 @@
+<!--Justified Gallery-->
+<link rel="stylesheet" href="../bower_components/justifiedGallery/dist/css/justifiedGallery.css" />
+<script src="../bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js"></script>
+<!--Script-->
+<script>
+    $("#mygallery").justifiedGallery();
+</script>
+<!--Sticky nav-->
+
+
+<script>
+    var sticky = document.querySelector('.sticky-nav');
+    var origOffsetY = sticky.offsetTop;
+
+    function onScroll(e) {
+        window.scrollY >= origOffsetY ? sticky.classList.add('navbar-fixed-top') :
+            sticky.classList.remove('navbar-fixed-top');
+    }
+
+    document.addEventListener('scroll', onScroll);
+</script>
+
+
+<div class="container-fluid">
+    <div id="mygallery">
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/e.jpg" />
+        </a>
+        <a href="path/to/myimage1_original.jpg">
+            <img alt="Title 1" src="images/c.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/a.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/h.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/j.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/f.jpg" />
+        </a>
+        <a href="path/to/myimage1_original.jpg">
+            <img alt="Title 1" src="images/a.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/b.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/c.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/d.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/e.jpg" />
+        </a>
+        <a href="path/to/myimage1_original.jpg">
+            <img alt="Title 1" src="http://www.download-free-wallpaper.com/img88/kchhtlxfcpbwjhnnvvtq.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/a.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/h.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/j.jpg" />
+        </a>
+        <a href="path/to/myimage2_original.jpg">
+            <img alt="Title 2" src="images/f.jpg" />
+        </a>
+
+    </div>
+</div>

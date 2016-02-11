@@ -1,129 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Simple Sidebar - Start Bootstrap Template</title>
-        <link rel="shortcut icon" href="/favicon.ico">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        <script src="/bower_components/modernizr/modernizr.js"></script>
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-        <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/simple-sidebar.css" rel="stylesheet">
-        <link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
-        <link rel="stylesheet" href = "styles/main.scss">
-    </head>
-    <body data-spy="scroll" data-target="#myScrollspy">
-
-
-        <header>
-            <!--Nav bar-->
-
-
-            <nav class="navbar navbar-inverse" role="navigation">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <!--
-                          
-
-                        <a class="navbar-brand" href="#">
-
-<!--                            <img class="img-responsive" src="images/logo.png" />-->
-                        </a>
-                    </div>
-
-                    <div class="caigido">
-                        <ul class="nav navbar-nav navbar-left">
-                            <li class="active">
-                                <a href="#"><span class="glyphicon glyphicon-picture"></span> <span class="title">Photo</span></a>
-                            </li>
-                            <li>
-                                <a ui-sref="video"><span class="glyphicon glyphicon-film"></span> <span class="title">Video</span></a>
-                            </li>
-
-                            <li>
-                                <a href="#"><span class="glyphicon glyphicon-headphones"></span> <span class="title">Sound</span></a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <!--Nav bar right-->
-
-                    <ul class="nav navbar-nav navbar-right ">
-                        <li>
-                            <a href="#"><span class="glyphicon glyphicon-cloud-upload"></span> <span class="title">Upload</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span> <span class="title">Sign up</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="glyphicon glyphicon-user"></span> <span class="title">Login</span></a>
-                        </li>
-
-
-
-                    </ul>
-
-
+<div class="container-fluid">
+    <div id="sidebar-wrapper1">
+        <ul id="sidebar" class="nav nav-pills nav-stacked" style="max-width: 300px;">
+            <li class="active"><a href="#"><span class ="glyphicon glyphicon-camera "></span> </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span>  User</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-thumbs-up"></span>  Like</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-link"></span>  Share</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-book"></span>  Description</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>  Edit photo</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-th-list"></span>  Details</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-comment"></span>  Comment</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="sidebar-nav-fixed affix">
+            <div class="thumbnail_container">
+                <div class="thumbnail">
                 </div>
-            </nav>
-
-        </header>
-
-        <div ui-view=""></div>
-
-
-       
-        <div class="container-fluid">
-            <div id="sidebar-wrapper1">
-                            <ul id="sidebar" class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                                <li class="active"><a href="#"><span class ="glyphicon glyphicon-camera "></span> </a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>  User</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-thumbs-up"></span>  Like</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-link"></span>  Share</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-book"></span>  Description</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>  Edit photo</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-th-list"></span>  Details</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-comment"></span>  Comment</a></li>
-                            </ul>
-                        </div>
-            <div class="row">
-
-                <div class="sidebar-nav-fixed affix">    
-<!--                    <div id="wrapper">-->
-
-                        <div class="thumbnail_container">
-                            <div class="thumbnail">
-<!--                                <img src="images/me.jpg">-->
-                            </div>
-                        </div>   
-
-                        
-                    </div> 
-                </div>
-            </div>    
-<!--        </div> -->
-
- <script src="/bower_components/jquery/dist/jquery.js"></script>
-
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-  <script src="scripts/main.js"></script>
-    </body>
-</html>
+            </div>
+        </div>
+    </div>
+</div>
