@@ -62,6 +62,19 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/app.js"></script>
     <!-- endbuild -->
+    
+<!--    Sticky nav-->
+<script>
+    var sticky = document.querySelector('.sticky-nav');
+    var origOffsetY = sticky.offsetTop;
+
+    function onScroll(e) {
+        window.scrollY >= origOffsetY ? sticky.classList.add('navbar-fixed-top') :
+            sticky.classList.remove('navbar-fixed-top');
+    }
+
+    document.addEventListener('scroll', onScroll);
+</script>
 
 </body>
 
