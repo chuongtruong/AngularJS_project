@@ -2,93 +2,67 @@
 <html class="no-js" lang="" ng-app="myApp">
 
 <head>
-  <meta charset="utf-8">
-  <title>bootstrap</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>bootstrap</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-  <!-- build:css(.) styles/vendor.css -->
-  <!-- bower:css -->
-  <!-- endbower -->
-  <!-- endbuild -->
-  <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
-  <!-- build:js scripts/vendor/modernizr.js -->
-  <script src="/bower_components/modernizr/modernizr.js"></script>
-  <!-- endbuild -->
-  <!--Fonts-->
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/justifiedGallery/dist/css/justifiedGallery.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    <!--Fonts-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 
 </head>
 
 <body>
-<div ui-view=""></div>
+    <div ui-view=""></div>
+
+    <!-- sisältö loppuu -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
 
+    <!-- build:js(.) scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbuild -->
 
 
-
-  <!-- sisältö loppuu -->
-
-  <!-- build:js(.) scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <script src="/bower_components/angular/angular.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
-
-
-  <!-- build:js(.) scripts/plugins.js -->
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <!-- endbuild -->
-
-
-  <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
-  <script src="scripts/app.js"></script>
-  <!-- endbuild -->
-
-  <!--Justified Gallery-->
-  <link rel="stylesheet" href="../bower_components/justifiedGallery/dist/css/justifiedGallery.css" />
-  <script src="../bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js"></script>
-
-  <!--Script-->
-  <script>
-    $("#mygallery").justifiedGallery();
-  </script>
-  <!--Sticky nav-->
-
-
-  <script>
-    var sticky = document.querySelector('.sticky-nav');
-    var origOffsetY = sticky.offsetTop;
-
-    function onScroll(e) {
-      window.scrollY >= origOffsetY ? sticky.classList.add('navbar-fixed-top') :
-        sticky.classList.remove('navbar-fixed-top');
-    }
-
-    document.addEventListener('scroll', onScroll);
-  </script>
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/app.js"></script>
+    <!-- endbuild -->
 
 </body>
 
 </html>
-

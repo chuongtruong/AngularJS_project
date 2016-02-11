@@ -1,0 +1,80 @@
+<!-- header -->
+<header>
+    <!--Nav bar-->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img class="img-responsive" src="images/logo.png" />
+                </a>
+            </div>
+            <div class="caigido">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active">
+                        <a ui-sref="photo"><span class="glyphicon glyphicon-picture"></span> <span class="title">Photo</span></a>
+                    </li>
+                    <li>
+                        <a ui-sref="video"><span class="glyphicon glyphicon-film"></span> <span class="title">Video</span></a>
+                    </li>
+                    <li>
+                        <a ui-sref="sound"><span class="glyphicon glyphicon-headphones"></span> <span class="title">Sound</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--Nav bar right-->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a ui-sref="upload"><span class="glyphicon glyphicon-cloud-upload"></span> <span class="title">Upload</span></a>
+                </li>
+                <li>
+                    <a href="signup"><span class="glyphicon glyphicon-pencil"></span> <span class="title">Sign up</span></a>
+                </li>
+                <li>
+                    <a href="login"><span class="glyphicon glyphicon-user"></span> <span class="title">Login</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- End of header -->
+
+<div ui-view=""></div>
+
+<!-- footer -->
+<div class="footer">
+    <div class='container-fluid'>
+        <div class="row"></div>
+        <div class='col-md-4'>
+            <h4 class="intro">Who We are</h4>
+            <p><i>Chuong, Yasamin, HyeSoo :D </i></p>
+            <p><a href='about.html'>More About us</a></p>
+        </div>
+
+        <div class='col-md-4'>
+            <h4 class="intro">Links</h4>
+            <ul class="list-unstyled">
+                <li><a href='#'>Home</a></li>
+                <li><a href='#'>Photo</a></li>
+                <li><a href='#'>Video</a></li>
+                <li><a href='#'>Sound</a></li>
+            </ul>
+        </div>
+
+        <div class='col-md-4'>
+            <h4 class="intro">Stay in Touch</h4>
+            <ul class="list-unstyled">
+                <li><a href='about.html'>About</a></li>
+                <li><a href='contact.html'>Contact Us</a></li>
+                <li><a href='/blog'>Espoo, Finland</a></li>
+                <li><a href='mailto:blahblah@metropolia.fi'>blahblah@metropolia.fi</a></li>
+                <li><a href='https://github.com/chuongtruong/AngularJS_project'>Github</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row text-center" id="copyr">
+        <p>&copy; Mr&amp;Miss Softee</p>
+    </div>
+</div>
+<!-- End of footer -->
+

@@ -4,7 +4,9 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.3",
-    "angular-ui-router": "~0.2.18"
+    "angular-ui-router": "~0.2.18",
+    "justifiedGallery": "justified-gallery#~3.6.1",
+    "bootstrap": "~3.3.6"
   },
   "overrides": {
     "bootstrap-sass": {
