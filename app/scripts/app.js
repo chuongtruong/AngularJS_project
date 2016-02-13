@@ -36,11 +36,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('signup', {
             parent: 'app',
             url: "/signup",
-            templateUrl: 'signup.html'
+            templateUrl: 'views/registerForm.html',
+            controller: 'registerController'
         })
         .state('login', {
             parent: 'app',
             url: "/login",
-            templateUrl: 'login.html'
+            templateUrl: 'views/loginForm.html',
+            controller: 'loginController'
         });
 });
