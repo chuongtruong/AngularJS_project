@@ -1,44 +1,78 @@
 <!-- header -->
 <header>
-    <!--Nav bar-->
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <img class="img-responsive" src="images/logo.png" />
-                </a>
-            </div>
-            <div class="caigido">
-                <ul class="nav navbar-nav navbar-left">
-                    <li class="active">
-                        <a ui-sref="photo"><span class="glyphicon glyphicon-picture"></span> <span class="title">Photo</span></a>
-                    </li>
-                    <li>
-                        <a ui-sref="video"><span class="glyphicon glyphicon-film"></span> <span class="title">Video</span></a>
-                    </li>
-                    <li>
-                        <a ui-sref="sound"><span class="glyphicon glyphicon-headphones"></span> <span class="title">Sound</span></a>
-                    </li>
-                </ul>
-            </div>
+  <!--Nav bar-->
 
-            <!--Nav bar right-->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a ui-sref="uploadEdit"><span class="glyphicon glyphicon-cloud-upload"></span> <span class="title">Upload</span></a>
-                </li>
-                <li>
-                    <a ui-sref="signup"><span class="glyphicon glyphicon-pencil"></span> <span class="title">Sign up</span></a>
-                </li>
-                <li>
-                    <a ui-sref="login"><span class="glyphicon glyphicon-user"></span> <span class="title">Login</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!--Nav bar | Nav bar- left-->
+        <a class="navbar-brand" href="#">
+
+          <img class="img-responsive" src="images/logo.png" />
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="active">
+            <a href="#">
+              <span class="glyphicon glyphicon-picture"></span>
+              <span class="title">Photo</span>
+            </a>
+          </li>
+          <li>
+            <a ui-sref="video">
+              <span class="glyphicon glyphicon-film"></span>
+              <span class="title">Video</span>
+            </a>
+          </li>
+
+          <li>
+            <a ui-sref="login">
+              <span class="glyphicon glyphicon-headphones"></span>
+              <span class="title">Sound</span>
+            </a>
+          </li>
+        </ul </div>
+
+        <!--Nav bar right-->
+
+        <ul class="nav navbar-nav navbar-right ">
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-cloud-upload"></span>
+              <span class="title">Upload</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="glyphicon glyphicon-pencil"></span>
+              <span class="title">Sign up</span>
+              <span class="cart"></span>
+            </a>
+              
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="glyphicon glyphicon-user"></span>
+              <span class="title">Login</span>
+              <span class="cart"></span>
+            </a>
+      </div>
+  </nav>
+
 </header>
 <!-- End of header -->
 
+        
 <div ui-view=""></div>
 
 <!-- footer -->
