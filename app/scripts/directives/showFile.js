@@ -1,8 +1,8 @@
 angular.module('myApp')
-    .directive('fileForm', function () {
+    .directive('showFiles', function () {
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'uploadEdit.html'
-        };
+            templateUrl: 'views/showFiles.html'
+        }
     });
