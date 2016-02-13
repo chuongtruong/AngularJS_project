@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-left">
           <li class="active">
-            <a href="#">
+            <a ui-sref="photo">
               <span class="glyphicon glyphicon-picture"></span>
               <span class="title">Photo</span>
             </a>
@@ -36,7 +36,7 @@
           </li>
 
           <li>
-            <a ui-sref="login">
+            <a ui-sref="sound">
               <span class="glyphicon glyphicon-headphones"></span>
               <span class="title">Sound</span>
             </a>
@@ -47,13 +47,13 @@
 
         <ul class="nav navbar-nav navbar-right ">
           <li>
-            <a href="#">
+            <a ui-sref="uploadEdit">
               <span class="glyphicon glyphicon-cloud-upload"></span>
               <span class="title">Upload</span>
             </a>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a ui-sref="signup" class="dropdown-toggle" data-toggle="dropdown">
               <span class="glyphicon glyphicon-pencil"></span>
               <span class="title">Sign up</span>
               <span class="cart"></span>
@@ -61,7 +61,7 @@
               
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a ui-sref="login" class="dropdown-toggle" data-toggle="dropdown">
               <span class="glyphicon glyphicon-user"></span>
               <span class="title">Login</span>
               <span class="cart"></span>
@@ -88,17 +88,17 @@
         <div class='col-md-4'>
             <h4 class="intro">Links</h4>
             <ul class="list-unstyled">
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>Photo</a></li>
-                <li><a href='#'>Video</a></li>
-                <li><a href='#'>Sound</a></li>
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="photo">Photo</a></li>
+                <li><a ui-sref="video">Video</a></li>
+                <li><a ui-sref="sound">Sound</a></li>
             </ul>
         </div>
 
         <div class='col-md-4'>
             <h4 class="intro">Stay in Touch</h4>
             <ul class="list-unstyled">
-                <li><a href='about.html'>About</a></li>
+                <li><a href='#'>About</a></li>
                 <li><a href='contact.html'>Contact Us</a></li>
                 <li><a href='/blog'>Espoo, Finland</a></li>
                 <li><a href='mailto:blahblah@metropolia.fi'>blahblah@metropolia.fi</a></li>

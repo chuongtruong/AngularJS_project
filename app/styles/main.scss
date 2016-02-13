@@ -8,6 +8,10 @@ $icon-font-path:"../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 // your own css/scss
 // your own css/scss ends
 // Logo
+.fontLatoStyle{
+    font-family: Lato;
+}
+
 .navbar-brand {
   padding: 0 0 0 0;
   display: flex;
@@ -388,6 +392,7 @@ a:focus {
 
 .btnMargin {
     margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 //*******login.html & signup.html
