@@ -9,93 +9,105 @@ $icon-font-path:"../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 // your own css/scss ends
 //Logo
 .navbar-brand {
-  padding: 0 0 0 0;
-  display: flex;
-  /* flex-direction: column;*/
-  align-items: center;
-  /* justify-content: center;*/
-  opacity: 0.8;
+    padding: 0 0 0 0;
+    display: flex;
+    /* flex-direction: column;*/
+    align-items: center;
+    /* justify-content: center;*/
+    opacity: 0.8;
 }
+
 .navbar-brand:hover {
-  opacity: 1;
+    opacity: 1;
 }
+
 .navbar-brand>img {
-  max-height: 100%;
-  height: 80%;
-  width: auto;
-  margin: auto;
-  vertical-align: middle;
-  display: block;
-  margin: 0px auto;
+    max-height: 100%;
+    height: 80%;
+    width: auto;
+    margin: auto;
+    vertical-align: middle;
+    display: block;
+    margin: 0px auto;
 }
+
 .navbar-left {
-  margin-left: 20px;
+    margin-left: 20px;
 }
+
 .navbar-inverse .navbar-nav > li {
-  opacity: 0.8;
+    opacity: 0.8;
 }
+
 .navbar-inverse .navbar-nav > li:hover {
-  opacity: 1;
+    opacity: 1;
 }
+
 .navbar-inverse .navbar-nav > li > a {
-  font-family: Lato;
-  color: #FFF;
-  text-transform: uppercase;
-  font-size: 18px;
+    font-family: Lato;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
 @media only screen and (max-width: 1026px) {
     .navbar-inverse .navbar-nav > li > a [class*="title"] {
-      display: none;
+        display: none;
     }
-  }
+}
 
 .navbar-inverse {
-  margin-bottom: 0;
-  border-radius: 0;
-  padding-left: 65px;
-  padding-right: 45px;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding-left: 65px;
+    padding-right: 45px;
 }
+
 //2nd-nav-bar
 .sticky-nav {
-  background-color: white;
+    background-color: white;
 }
+
 .sticky-nav >ul {
-  padding: 1.5% 0 1% 0;
+    padding: 1.5% 0 1% 0;
 }
+
 .sticky-nav >ul >li {
-  font-family: Lato;
-  color: #6B6A6A;
-  display: inline;
-  text-transform: uppercase;
-  font-size: 18px;
-  margin-left: 20px;
-  margin-right: 20px;
+    font-family: Lato;
+    color: #6B6A6A;
+    display: inline;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
+
 .sticky-nav >ul >li >a {
-  color: #666767;
-  text-decoration: none;
+    color: #666767;
+    text-decoration: none;
 }
+
 //Main
- .main {
-  padding-top: 60px;
-  background-color: #F7F5F5;
-  padding-left: 45px;
-  padding-right: 45px;
-     padding-bottom: 60px;
+.main {
+    padding-top: 60px;
+    background-color: #F7F5F5;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 60px;
 }
+
 //Footer
 footer {
-  background-color: #ffffff;
-  font-family: Lato;
-  line-height: 10px;
+    background-color: #ffffff;
+    font-family: Lato;
+    line-height: 10px;
 }
+
 .intro {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 //*********index.html*******
-
 .glyphiconSty {
     font-size: 35px;
     margin-top: 50px;
@@ -124,11 +136,10 @@ iframe {
     margin-bottom: 20px;
 }
 
-.footer{
-    background-color:darkturquoise;
-    color:azure;
+.footer {
+    background-color: darkturquoise;
+    color: azure;
     font-size: 1.2em;
-    margin-bottom: auto 0px;
 }
 
 //*****************css for upload1.html & upload2.html
@@ -159,13 +170,13 @@ iframe {
     transition: all 0.5s ease;
 }
 
-
 #sidebar {
     background-color: #2b2b2b;
     padding: 10px;
 }
 
-#sidebar a:hover, a:focus {
+#sidebar a:hover,
+a:focus {
     color: #FFF;
     text-decoration: none;
 }
@@ -188,4 +199,228 @@ iframe {
     background-color: #C72A25;
 }
 
+//**************** upload edit
 
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+    #sidebar-wrapper {
+        width: 250px;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+//**** edit image in uploadModal.html
+.conMargin {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.btnMargin {
+    margin-top: 50px;
+}
+
+//*******login.html & signup.html
+//for login 
+// .login-area {
+//  background-image: url("http://efdreams.com/data_images/dreams/mountain/mountain-07.jpg");
+//  background-size: cover;
+//  background-repeat: no-repeat;
+//}
+.login-panel {
+    padding: 30% 0 20% 0;
+}
+
+#vertiAlign {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom : 0;
+    right: 0;
+    left: 0;
+}
+
+.main-login {
+    text-align: center;
+    background-color: white;
+    padding: 3% 5% 5% 5%;
+    font-family: Lato;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.main-login h1 {
+    font-size: 40px;
+    font-weight: 200;
+    color: #E75854;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.login-form ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.login-form ul li input {
+    border: 5px solid #ebd3bd;
+    margin-bottom: 10px;
+    background: transparent;
+    width: 100%;
+    padding: 10px;
+}
+
+.submit-button {
+    background-color: #E75854;
+    border: none;
+    border-radius: 0em;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+    margin-top: 3%px;
+}
+
+//Sign up
+.main-signUp {
+    text-align: center;
+    background-color: white;
+    padding: 3% 5% 5% 5%;
+    font-family: Lato;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.main-signUp h1 {
+    font-size: 40px;
+    font-weight: 200;
+    color: #E75854;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.signUp-form ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.signUp-form ul li input {
+    border: 5px solid #ebd3bd;
+    margin-bottom: 10px;
+    background: transparent;
+    width: 100%;
+    padding: 10px;
+}

@@ -6,7 +6,8 @@
     "modernizr": "~2.8.3",
     "angular-ui-router": "~0.2.18",
     "justifiedGallery": "justified-gallery#~3.6.1",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~1.1.2"
   },
   "overrides": {
     "bootstrap-sass": {

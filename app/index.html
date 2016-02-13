@@ -55,26 +55,22 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
     <!-- endbuild -->
 
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/imageController.js"></script>
+    <script src="scripts/controllers/loginController.js"></script>
+    <script src="scripts/controllers/registerController.js"></script>
+    <script src="scripts/controllers/uploadController.js"></script>
+    <script src="scripts/services/ajaxFactory.js"></script>
+
     <!-- endbuild -->
-    
-<!--    Sticky nav-->
-<script>
-    var sticky = document.querySelector('.sticky-nav');
-    var origOffsetY = sticky.offsetTop;
-
-    function onScroll(e) {
-        window.scrollY >= origOffsetY ? sticky.classList.add('navbar-fixed-top') :
-            sticky.classList.remove('navbar-fixed-top');
-    }
-
-    document.addEventListener('scroll', onScroll);
-</script>
 
 </body>
 

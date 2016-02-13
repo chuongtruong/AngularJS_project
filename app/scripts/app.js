@@ -1,4 +1,5 @@
-var app = angular.module("myApp", ["ui.router"]);
+var app = angular.module("myApp", ["ui.router", "ui.bootstrap"]);
+//"controllerModule" we can delete
 
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/home");
@@ -27,10 +28,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/sound",
             templateUrl: 'sound.html'
         })
-        .state('upload', {
+        .state('uploadEdit', {
             parent: 'app',
-            url: "/upload",
-            templateUrl: 'upload1.html'
+            url: "/uploadEdit",
+            templateUrl: 'uploadEdit.html'
         })
         .state('signup', {
             parent: 'app',
@@ -42,5 +43,4 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/login",
             templateUrl: 'login.html'
         });
-
 });
