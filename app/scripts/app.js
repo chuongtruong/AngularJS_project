@@ -1,6 +1,7 @@
 var app = angular.module("myApp", ["ui.router", "ui.bootstrap"]);
 //"controllerModule" we can delete
 
+
 app.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise("/home");
@@ -47,9 +48,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/login",
       templateUrl: 'views/loginForm.html',
       controller: 'loginController'
+    })
+  .state('signupSuccess', {
+            parent: 'app',
+            url: "/signupSuccess",
+            templateUrl: 'signupSuccess.html'
+        })
+    .state('loginSuccess', {
+        parent: 'app',
+        url: "/loginSuccess",
+        templateUrl: 'loginSuccess.html'
     });
-
-
 });
 
 // security config
