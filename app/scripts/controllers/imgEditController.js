@@ -2,7 +2,6 @@
 
 angular.module('myApp')
     .controller('imageCtrl', function ($scope) {
-
         $scope.setImageFile = function (element) {
             //get the image file from element 
             //start to put the data into canvas element
