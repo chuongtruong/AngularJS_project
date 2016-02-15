@@ -44,5 +44,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/login",
             templateUrl: 'views/loginForm.html',
             controller: 'loginController'
+        })
+        .state('signupSuccess', {
+            parent: 'app',
+            url: "/signupSuccess",
+            templateUrl: 'signupSuccess.html'
         });
+    .state('loginSuccess', {
+        parent: 'app',
+        url: "/loginSuccess",
+        templateUrl: 'loginSuccess.html'
+    });
 });
