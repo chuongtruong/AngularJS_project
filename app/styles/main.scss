@@ -397,16 +397,18 @@ a:focus {
     margin-top: 50px;
     margin-bottom: 30px;
 }
-
+//
 //*******login.html & signup.html
+//
 //for login 
 // .login-area {
 //  background-image: url("http://efdreams.com/data_images/dreams/mountain/mountain-07.jpg");
 //  background-size: cover;
 //  background-repeat: no-repeat;
 //}
+
 .login-panel {
-    padding: 30% 0 20% 0;
+    padding: 20% 0 20% 0;
 }
 
 #vertiAlign {
@@ -459,6 +461,9 @@ a:focus {
 }
 
 //Sign up
+.login-panel{
+    z-index:-1;
+}
 .main-signUp {
     text-align: center;
     background-color: white;

@@ -58,3 +58,38 @@ controllerModule.controller("UploadModalCtrl", function ($scope, $state, $uibMod
         $scope.ctx.drawImage($scope.image, 0, 0, $scope.canvas.width, $scope.canvas.height);
     };
 });
+
+controllerModule.controller('galleryController', function($scope, $http) {
+    var userId = localStorage.getItem("userID");
+    $scope.photos = [];
+    if(userId){
+        var request = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files/user'+userId);
+        request.then(function(res){
+            res.forEach(function(file){
+               if(file.type==="image"){
+                   photos.push(file);
+               }
+            });
+        },function(err){
+            console.log(err);
+        });
+                     
+    } else {
+        var request = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files/type/image');
+        request.then(function(res){
+            res.forEach(function(file){
+                photos.push(file);
+            });
+        },function(err){
+            console.log(err);
+        });
+        console.log($scope.photos);
+    }
+
+//    request.then(function(res) {
+//        
+//      $scope.filePath = 'http://util.mw.metropolia.fi/uploads/' + res.data.path;
+//    }, function(error) {
+//      console.log(error);
+//    });
+  });

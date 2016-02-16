@@ -2,9 +2,7 @@
 <link rel="stylesheet" href="../bower_components/justifiedGallery/dist/css/justifiedGallery.css" />
 <script src="../bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js"></script>
 <!--Script-->
-<script>
-    $("#mygallery").justifiedGallery();
-</script>
+<
 
 <!--    Sticky nav-->
 <script>
@@ -43,56 +41,25 @@
 </div>
 <!--End of the second nav-->
 
+<!--
+<body ng-controller="galleryController">
 <div class="container-fluid">
-    <div id="mygallery">
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/e.jpg" />
-        </a>
-        <a href="path/to/myimage1_original.jpg">
-            <img alt="Title 1" src="images/c.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/a.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/h.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/j.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/f.jpg" />
-        </a>
-        <a href="path/to/myimage1_original.jpg">
-            <img alt="Title 1" src="images/a.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/b.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/c.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/d.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/e.jpg" />
-        </a>
-        <a href="path/to/myimage1_original.jpg">
-            <img alt="Title 1" src="http://www.download-free-wallpaper.com/img88/kchhtlxfcpbwjhnnvvtq.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/a.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/h.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/j.jpg" />
-        </a>
-        <a href="path/to/myimage2_original.jpg">
-            <img alt="Title 2" src="images/f.jpg" />
-        </a>
+    <div id="mygallery" >
+    <p>{{$scope.filePath}}</p>
+    </div>
+    
+    
+    </div>
 
+</body>
+-->
+
+
+
+<div class="container-fluid">
+    <div infinite-gallery>
+        <a repeat-done ng-repeat="photo in photos" href="path/to/myimage2_original.jpg">
+            <img alt="{{photo.title}}" ng-src="http://util.mw.metropolia.fi/uploads/{{photo.path}}"/>
+        </a>
     </div>
 </div>

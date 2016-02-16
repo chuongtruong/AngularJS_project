@@ -1,4 +1,14 @@
 angular.module('myApp')
+   
+//  .controller('registerController', function($scope, AjaxFactory) {
+//    
+//    $scope.register = function() {
+//      var data = {
+//        "username": $scope.uname,
+//        "password": $scope.pwd,
+//        "email": $scope.email
+//      };
+
     .controller('registerController', ['$scope', 'AjaxFactory', '$location', function ($scope, AjaxFactory, $location) {
 
         //    app.controller('TestCtrl2', ['$scope', '$controller', function ($scope, $controller) {
@@ -16,7 +26,15 @@ angular.module('myApp')
                 "email": $scope.email
             };
 
-            var request = AjaxFactory.register(data);
+      var request = AjaxFactory.register(data);
+
+//      request.then(function(response) {
+//        console.log(response.data);
+//      }, function(error) {
+//        console.log(error.data);
+//      });
+//    };
+//  });
 
             request.then(function (response) {
                 console.log(response.data);
@@ -61,3 +79,4 @@ angular.module('myApp')
             });
         };
     }]);
+
