@@ -52,11 +52,11 @@
               <span class="title">Upload</span>
             </a>
           </li>
-          <li ng-class="{active: $state.current.name== 'signup'}">
+          <li ng-class="{active: $state.current.name== 'signup'}" ng-hide="isLoggedIn()">
             <a ui-sref="signup" class="dropdown-toggle" data-toggle="dropdown">
               <span class="glyphicon glyphicon-pencil"></span>
               <span class="title">Sign up</span>
-              <span class="cart"></span>
+              <span class="cart"></span>    
             </a>
 
           </li>
