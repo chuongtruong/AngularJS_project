@@ -49,7 +49,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             parent: 'app',
             url: "/signupSuccess",
             templateUrl: 'signupSuccess.html'
-        });
+        })
     .state('loginSuccess', {
         parent: 'app',
         url: "/loginSuccess",
