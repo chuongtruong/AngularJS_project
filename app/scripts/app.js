@@ -16,12 +16,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/home",
       templateUrl: 'home.html'
     })
+    .state('discover', {
+      parent: 'app',
+      templateUrl: 'views/discover.html',
+      url: "/discover",
+      controller: 'discoverController'
+    })
     .state('photo', {
       parent: 'app',
       url: "/photo",
       templateUrl: 'photo.html',
-      controller: "galleryController"
-    })
+      controller: 'galleryController'
+  })
     .state('video', {
       parent: 'app',
       url: "/video",
@@ -49,16 +55,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/loginForm.html',
       controller: 'loginController'
     })
-  .state('signupSuccess', {
-            parent: 'app',
-            url: "/signupSuccess",
-            templateUrl: 'signupSuccess.html'
-        })
-    .state('loginSuccess', {
-        parent: 'app',
-        url: "/loginSuccess",
-        templateUrl: 'loginSuccess.html'
-    });
+    .state('signupSuccess', {
+      parent: 'app',
+      url: "views/signupSuccess",
+      templateUrl: 'signupSuccess.html'
+    })
+  
+
+  .state('loginSuccess', {
+    parent: 'app',
+    url: "/loginSuccess",
+    templateUrl: 'loginSuccess.html'
+  });
+
+
 });
 
 // security config

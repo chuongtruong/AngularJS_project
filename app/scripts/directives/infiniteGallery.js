@@ -7,7 +7,14 @@ angular.module('myApp')
           scope.$watch('$last', function(n, o) {
             if (n) {
               $timeout(function() {
-                $(el[0]).justifiedGallery();
+                $(el[0]).justifiedGallery({
+                  'rowHeight': 250,
+                  'fixedHeight': true,
+                  'captions': true,
+                  'target': '_blank',
+                  'margins': 8,
+                });
+
               });
             }
           });
