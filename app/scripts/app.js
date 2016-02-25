@@ -57,7 +57,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('searchResult', {
             parent: 'app',
             url: '/searchResult',
-            templateUrl: 'views/searchResult.html'
+            templateUrl: 'views/searchResult.html',
+            controller: 'searchResultController'
         })
         .state('loginSuccess', {
             parent: 'app',
@@ -84,6 +85,4 @@ app.run(function ($rootScope, $state) {
         var userId = localStorage.getItem("userID");
         return !!userId;
     }
-    
-    $rootScope.results = [];
 });

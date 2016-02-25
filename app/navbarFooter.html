@@ -46,10 +46,9 @@
                 <!--Nav bar right-->
 
                 <ul class="nav navbar-nav navbar-right ">
-                    <li ng-controller="searchController" action="searchResult.html">
+                    <li ng-controller="searchController">
                         <form>
                         <input type="text" ng-model="keywords" ng-change="search(keywords)">
-                        <button class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></button>
                         </form>
                     </li>
                     <li ng-class="{active: $state.current.name== 'uploadEdit'}">
