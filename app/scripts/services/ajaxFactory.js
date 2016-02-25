@@ -19,13 +19,28 @@ angular.module('myApp')
                 }
             });
         };
-    
+
         ajaxFunctions.login = function (args) {
             return $http.post(urlBase + 'login', $httpParamSerializer(args), {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             });
+        };
+        ajaxFunctions.search = function (args) {
+            return $http.post(urlBase + 'files/search/title', "title=" + encodeURIComponent(args), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            });
+//            return $http({
+//                method: 'POST',
+//                url: urlBase + 'files/search/title',
+//                data: $.param(args), // pass in data as strings
+//                headers: {
+//                    'Content-Type': 'application/x-www-form-urlencoded'
+//                } // set the headers so angular passing info as form data (not request payload)
+//            });
         };
 
         return ajaxFunctions;
