@@ -2,109 +2,25 @@
 <link rel="stylesheet" href="../bower_components/justifiedGallery/dist/css/justifiedGallery.css" />
 <script src="../bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js">
 </script>
+<script type="text/ng-template" id="myModalContent.html" src="views/lightbox.html">
+</script>
+<!--For script-->
+<!--MAIN-->
 
-<div ng-controller="lightboxController">
-  <div class="container-fluid" data-ng-controller="galleryController">
+
+<div>
+  <div class="container-fluid">
     <div infinite-gallery>
-      <a ng-click="open()" repeat-done ng-repeat="photo in photos">
+      <a ng-click="open(photo)" repeat-done ng-repeat="photo in photos">
         <img alt="{{photo.title}}" ng-src="http://util.mw.metropolia.fi/uploads/{{photo.path}}" />
       </a>
+      
     </div>
   </div>
-  <script type="text/ng-template" id="myModalContent.html">
-      <div class="photo-area col-lg-12 col-md-12 col-xs-12">
-         <img class="img-responsive" src="http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwOTgxMTI5NDk3OTA5NzI2.jpg"/>
-        </div>
-    <div class="container-fluid modal-body">
-     
-        <div class="comment-area col-lg-8 col-md-8 col-xs-12">
-            <div class="title_des">
-                <h3>
-                    Evening Highway 2015
-                </h3>
-                <hr>
-                <p>
-                    I don't know if there is a word for an alley, when it's a canal. But if there is one, this would be one I think. Bruges is a beautiful medieval city in Belgium. It's worth a visit if you get the chance.
---Jacob Surland www.caughtinpixels.com
-                </p>
-            </div>
-            <hr>
-            <div class="like_comment">
-                 <ul>
-                     <li>
-                         <a>
-                             <span class="glyphicon glyphicon-heart"></span>Like
-                         </a>
-                     </li>
-                     <li>
-                         <a>
-                             <span class="glyphicon glyphicon-comment"></span>Comment
-                        </a>
-                    </li>
-                     <li>
-                         <a>
-                             <span class="glyphicon glyphicon-download"></span>Download
-                        </a>
-                    </li>
-                     <li>
-                         <a>
-                             <span class="glyphicon glyphicon-share"></span>Share
-                        </a>
-                    </li>
-                </ul>
-            
-           </div>
-         <hr>
-            <div class="comment-form">
-                <form>
-                    <input class="comment-input" type="text" method="post" placeholder="What is your opinion?"/>
-                    <button class="comment-submit" type="submit" >Send</button>
-                    
-                    
-                    
-                </form>
-            </div>
-        <hr>
-            <div class="comment-area">
-                <ul>
-                    <li style="font-weight:bolder">
-                        haha1
-                    </li>
-                    <li style="font-style: italic">
-                        This photo is awesome!!
-                    </li>
-                
-                </ul>
-            </div>
-     </div>
-        
-        
-        <div class="exif-area col-lg-4 col-md-4 col-xs-12">
-            <h3>Photo Exif</h3>
-            <hr>
-            <ul>
-                <li >
-                    Uploader: 231
-                </li>
-                <li>
-                    File ID: 232
-                </li>
-                <li>
-                    Type: image
-                </li>
-                <li>
-                    Liked times: 20
-                </li>
-                <li>
-                    Comments: 10
-                </li>
-            </ul>
-        </div>
-  </script>
 </div>
-<!--For script-->
 
-<!--MAIN-->
+
+
 
 
 

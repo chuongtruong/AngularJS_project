@@ -1,16 +1,31 @@
 angular.module('myApp')
-  .controller('galleryController', function($scope, $http, $state) {
+  .controller('galleryController', function($scope, $http, $state, $uibModal) {
     var userId = localStorage.getItem("userID");
     $scope.photos = [];
+
     if (userId) {
       var request = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files/user/' + userId);
+
       request.then(function(res) {
         res.data.forEach(function(file) {
           if (file.type === "image") {
+            var fileId = file.fileId;
+            //            console.log(fileId);
+            var cmtRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/comments/file/' + fileId);
+            file.comments = [];
+            cmtRequest.then(function(cmtRes) {
+              cmtRes.data.forEach(function(cmt) {
+
+                file.comments.push(cmt);
+                //console.log($scope.comments);
+              });
+            });
             $scope.photos.push(file);
           }
         });
-        console.log($scope.photos);
+        //        console.log($scope.photos);
+
+
 
       }, function(err) {
         console.log("err", err);
@@ -31,6 +46,22 @@ angular.module('myApp')
 
       });
     }
+
+    $scope.open = function(file) {
+
+      var modalInstance = $uibModal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: '../../views/lightbox.html',
+        controller: 'lightboxController',
+        size: 'lg',
+        resolve: {
+          item: function() {
+            return file;
+          }
+        }
+
+      });
+    };
 
     //    request.then(function(res) {
     //

@@ -1,52 +1,34 @@
 angular.module('myApp')
-.controller('lightboxController', function ($scope, $uibModal, $log) {
+  .controller('lightboxController', function($scope, $uibModalInstance, item) {
+    $scope.file = item;
+    console.log("item", item);
+    $scope.animationsEnabled = true;
 
-  $scope.items = ['item1', 'item2', 'item3'];
+    $scope.toggleAnimation = function() {
+      $scope.animationsEnabled = !$scope.animationsEnabled;
+    };
+    $scope.ok = function() {
+      $uibModalInstance.close($scope.item);
+    };
 
-  $scope.animationsEnabled = true;
+    $scope.cancel = function() {
+      $uibModalInstance.dismiss('cancel');
+    };
+  });
 
-  $scope.open = function (size) {
-
-    var modalInstance = $uibModal.open({
-      animation: $scope.animationsEnabled,
-      templateUrl: 'myModalContent.html',
-      controller: 'lightboxController',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-  };
-
-  $scope.toggleAnimation = function () {
-    $scope.animationsEnabled = !$scope.animationsEnabled;
-  };
-
-});
-
-// Please note that $uibModalInstance represents a modal window (instance) dependency.
-// It is not the same as the $uibModal service used above.
-
-angular.module('ui.bootstrap.demo').controller('lightboxController', function ($scope, $uibModalInstance, items) {
-
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
-
-  $scope.ok = function () {
-    $uibModalInstance.close($scope.selected.item);
-  };
-
-  $scope.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
-  };
-});
+//angular.module('myApp')
+//  .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, items) {
+//
+//    $scope.items = items;
+//    $scope.selected = {
+//      item: $scope.items[0]
+//    };
+//
+//    $scope.ok = function() {
+//      $uibModalInstance.close($scope.selected.item);
+//    };
+//
+//    $scope.cancel = function() {
+//      $uibModalInstance.dismiss('cancel');
+//    };
+//  });
