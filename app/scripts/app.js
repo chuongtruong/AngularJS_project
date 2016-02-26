@@ -57,8 +57,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('searchResult', {
             parent: 'app',
             url: '/searchResult',
-            templateUrl: 'views/searchResult.html',
-            controller: 'searchResultController'
+            templateUrl: 'views/searchResult.html'
+            , controller: 'searchResultController'
         })
         .state('loginSuccess', {
             parent: 'app',
