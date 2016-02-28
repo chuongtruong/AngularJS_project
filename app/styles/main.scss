@@ -177,7 +177,7 @@ footer {
     margin-bottom: 10px;
 }
 
-img {
+main-img {
     width: 470px;
     height: 282px;
 }
@@ -397,6 +397,7 @@ a:focus {
     margin-top: 50px;
     margin-bottom: 30px;
 }
+
 //
 //*******login.html & signup.html
 //
@@ -406,7 +407,6 @@ a:focus {
 //  background-size: cover;
 //  background-repeat: no-repeat;
 //}
-
 .login-panel {
     padding: 20% 0 20% 0;
 }
@@ -461,9 +461,10 @@ a:focus {
 }
 
 //Sign up
-.login-panel{
-    z-index:-1;
+.login-panel {
+    z-index: -1;
 }
+
 .main-signUp {
     text-align: center;
     background-color: white;
@@ -500,7 +501,42 @@ a:focus {
 }
 
 //***** registerForm.html*****/
-.spanStyle{
-    color:coral;
-    font-weight: 200;  
+.spanStyle {
+    color: coral;
+    font-weight: 200;
+}
+
+//***** searchResult.html *****//
+.thumbAlign {
+    margin: 0 auto;
+}
+
+.img {
+    position: relative;
+    //float: left;
+    width: 100%;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.thumbnail {
+    width: 100%;
+    display: inline-block;
+}
+
+@media screen and (min-width: 1000px) {
+    .thumbnail {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 999px) {
+    .thumbnail {
+        width: 50%;
+    }
 }
