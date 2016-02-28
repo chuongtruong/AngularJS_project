@@ -14,4 +14,40 @@
         <p>{{file.path}}</p>
     </li>
 </ul>
-<span></span>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="thumbnail" ng-repeat="file in results">
+            <div class="caption">
+                <h3>{{ file.title }}</h3>
+            </div>
+            <div ng-if="file.type == 'image'">
+                <img src="{{trustSrc(file.path)}}" />
+            </div>
+            <div ng-if="file.type == 'audio'">
+                <audio controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
+                </audio>
+                <audio controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="audio/wav">
+                </audio>
+                <audio controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp3">
+                </audio>
+            </div>
+            <div ng-if="file.type == 'video'">
+                <video controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="video/mp4">
+                </video>
+            </div>
+            <!--                            <div class="img" ng-attr-style="background-image:url({{trustSrc(file.path)}});"></div>-->
+            <!--
+            <div class="img" ng-attr-style="background-image:url({{trustSrc(file.fileId)}});"></div>
+-->
+            
+        </div>
+
+    </div>
+</div>
+</div>
