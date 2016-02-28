@@ -1,7 +1,21 @@
 angular.module('myApp')
-  .controller('lightboxController', function($scope, $uibModalInstance, item) {
+  .controller('lightboxController', function($rootScope, $scope, $uibModalInstance, item, AjaxFactory) {
+    
     $scope.file = item;
-    console.log("item", item);
+    $scope.item = item;
+
+    console.log("item", item.comments);
+
+    $rootScope.itemID = item.fileId;
+    console.log("itemID", $rootScope.itemID);
+    
+//    $scope.review ={};
+//    $scope.addReview = function (content){
+//        content.push($scope.review);
+//        console.log('review', $scope.review);
+//        $scope.review ={};
+//    };
+    
     $scope.animationsEnabled = true;
 
     $scope.toggleAnimation = function() {
@@ -14,21 +28,24 @@ angular.module('myApp')
     $scope.cancel = function() {
       $uibModalInstance.dismiss('cancel');
     };
-  });
 
-//angular.module('myApp')
-//  .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, items) {
-//
-//    $scope.items = items;
-//    $scope.selected = {
-//      item: $scope.items[0]
-//    };
-//
-//    $scope.ok = function() {
-//      $uibModalInstance.close($scope.selected.item);
-//    };
-//
-//    $scope.cancel = function() {
-//      $uibModalInstance.dismiss('cancel');
-//    };
-//  });
+    $scope.comment = function() {
+      var data = {
+        'user': localStorage.getItem("userID"),
+        'comment': $scope.cmt
+      };
+      console.log('data', data);
+
+      var request = AjaxFactory.comment(data);
+
+      request.then(function(response) {
+        console.log(response.data);
+        console.log(response.data.status);
+
+      });
+    };
+
+
+
+
+  });

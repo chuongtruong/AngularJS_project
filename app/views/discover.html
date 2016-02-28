@@ -1,55 +1,45 @@
 <!--Justified Gallery-->
-<link rel="stylesheet" href="../bower_components/justifiedGallery/dist/css/justifiedGallery.css" />
+<link rel="stylesheet" href="../bower_components/justifiedGallery/dist/css/justifiedGallery.css"/>
+
 <script src="../bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js"></script>
+
+<script type="text/ng-template" id="myModalContent.html" src="views/lightbox.html"></script>
+
+<script src="../scripts/sticky-nav.js"></script>
+
 <!--Script-->
-< <!-- Sticky nav-->
-  <script>
-    var sticky = document.querySelector('.sticky-nav');
-    var origOffsetY = sticky.offsetTop;
+<!-- Second nav-->
 
-    function onScroll(e) {
-      window.scrollY >= origOffsetY ? sticky.classList.add('navbar-fixed-top') :
-        sticky.classList.remove('navbar-fixed-top');
-    }
-
-    document.addEventListener('scroll', onScroll);
-  </script>
-
-
-  <!-- Second nav-->
-
-  <div class="container-fluid">
-    <div align="center" class="sticky-nav">
-      <ul>
-        <li>
-          <a href="#">Newest</a>
-        </li>
-        <li>
-          <a href="#">popular</a>
-        </li>
-        <li>
-          <a href="#">top-rated</a>
-        </li>
-        <li>
-          <a href="#">discussing</a>
-        </li>
-
-      </ul>
-
-    </div>
+<div class="container-fluid">
+  <div align="center" class="sticky-nav">
+    <ul>
+      <li>
+        <a href="#">Newest</a>
+      </li>
+      <li>
+        <a href="#">popular</a>
+      </li>
+      <li>
+        <a href="#">top-rated</a>
+      </li>
+      <li>
+        <a href="#">discussing</a>
+      </li>
+    </ul>
   </div>
-  <!--End of the second nav-->
+</div>
+<!--End of the second nav-->
 
 
 
 
 <!--main-->
-  <div class="container-fluid">
-    <div infinite-gallery>
-      <a repeat-done ng-repeat="photo in photos" href="path/to/{{photo.path}}">
-        <img alt="{{photo.title}}" ng-src="http://util.mw.metropolia.fi/uploads/{{photo.path}}" />
-      </a>
-    </div>
+<div class="container-fluid">
+  <div infinite-gallery>
+    <a repeat-done ng-repeat="photo in photos" ng-click="open(photo)">
+      <img alt="{{photo.title}}" ng-src="http://util.mw.metropolia.fi/uploads/{{photo.path}}" />
+    </a>
   </div>
+</div>
 <!--End of main-->
 
