@@ -31,12 +31,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('video', {
             parent: 'app',
             url: "/video",
-            templateUrl: 'video.html'
+            templateUrl: 'video.html',
+            controller: 'videoController'
         })
         .state('sound', {
             parent: 'app',
             url: "/sound",
-            templateUrl: 'sound.html'
+            templateUrl: 'sound.html',
+            controller:'audioController'
         })
         .state('uploadEdit', {
             parent: 'app',

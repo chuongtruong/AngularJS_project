@@ -190,7 +190,7 @@ iframe {
 .sub-title {
     font-size: 30px;
     color: deepskyblue;
-    margin-bottom: 20px;
+    position: absolute;
 }
 
 #video {
@@ -516,6 +516,7 @@ a:focus {
     background-color: #212124;
     align-items: center;
     padding: 3% 10% 3% 10%;
+    z-index: 1;
 }
 
 .img-responsive {
