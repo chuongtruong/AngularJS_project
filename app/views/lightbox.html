@@ -1,0 +1,82 @@
+<div>
+  <div class="photo-area col-lg-12 col-md-12 col-xs-12">
+    <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{item.path}}" />
+  </div>
+  <div class="container-fluid modal-body">
+
+    <div class="comment-area col-lg-8 col-md-8 col-xs-12">
+      <div class="title_des">
+        <h3>{{item.title}}</h3>
+        <hr>
+        <p>{{item.description}}</p>
+      </div>
+      <hr>
+      <div class="like_comment">
+        <ul>
+          <li>
+            <a>
+              <span class="glyphicon glyphicon-heart"></span>Like
+            </a>
+          </li>
+            <li>
+<!--
+            <a>
+              <span class="glyphicon-red glyphicon-heart"></span>Like
+            </a>
+          </li>
+-->
+          <li>
+            <a>
+              <span class="glyphicon glyphicon-comment"></span>Comment
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="glyphicon glyphicon-download"></span>Download
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="glyphicon glyphicon-share"></span>Share
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <hr>
+      <div class="comment-form">
+        <form>
+          <input class="comment-input" type="text" placeholder="What is your opinion?" ng-model="cmt"/>
+          <button class="comment-submit" type="submit" ng-click="comment()">Send</button>
+        </form>
+      </div>
+      <hr>
+      <div class="comment-area-2" ng-repeat="comment in item.comments">
+        <ul>
+          <li style="font-weight:bolder">
+            {{comment.username}}
+          </li>
+          <li style="font-style: italic">
+            {{comment.comment }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="exif-area col-lg-4 col-md-4 col-xs-12">
+      <h3>Photo Exif</h3>
+      <hr>
+      <ul>
+        
+        <li>
+          <span style="font-weight: bolder">File ID:</span>  {{item.fileId}}
+        </li>
+        <li>
+          <span style="font-weight: bolder">Type:</span>  {{item.type}}
+        </li>
+        
+        <li>
+          <span style="font-weight: bolder">Comments:</span>  {{item.comments.length}}
+        </li>
+      </ul>
+    </div>
+  </div>

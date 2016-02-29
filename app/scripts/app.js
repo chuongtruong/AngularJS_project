@@ -16,11 +16,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/home",
             templateUrl: 'home.html'
         })
+        .state('discover', {
+            parent: 'app',
+            templateUrl: 'views/discover.html',
+            url: "/discover",
+            controller: 'discoverController'
+        })
         .state('photo', {
             parent: 'app',
             url: "/photo",
             templateUrl: 'photo.html',
-            controller: "galleryController"
+            controller: 'galleryController'
         })
         .state('video', {
             parent: 'app',
@@ -30,8 +36,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('sound', {
             parent: 'app',
             url: "/sound",
-            templateUrl: 'sound.html',
-            controller: "audioController"
+            templateUrl: 'sound.html'
         })
         .state('uploadEdit', {
             parent: 'app',
@@ -52,19 +57,19 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('signupSuccess', {
             parent: 'app',
-            url: "/signupSuccess",
+            url: "views/signupSuccess",
             templateUrl: 'signupSuccess.html'
-        })
-        .state('searchResult', {
-            parent: 'app',
-            url: '/searchResult',
-            templateUrl: 'views/searchResult.html'
-            , controller: 'searchResultController'
         })
         .state('loginSuccess', {
             parent: 'app',
             url: "/loginSuccess",
             templateUrl: 'loginSuccess.html'
+        })
+        .state('searchResult', {
+            parent: 'app',
+            url: '/searchResult',
+            templateUrl: 'views/searchResult.html',
+            controller: 'searchResultController'
         });
 });
 
@@ -82,6 +87,11 @@ app.run(function ($rootScope, $state) {
         }
     });
 
+    //    $rootScope.isLoggedIn = function () {
+    //        var userId = localStorage.getItem("userID");
+    //        return !!userId;
+    //    }
+    //});
     $rootScope.isLoggedIn = function () {
         var userId = localStorage.getItem("userID");
         return !!userId;

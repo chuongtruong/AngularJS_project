@@ -168,7 +168,7 @@ angular.module('myApp')
       var request = AjaxFactory.uploadFile(fd);
 
       request.then(function(response) {
-        console.log(response.data);
+        
         alert("file Uploaded");
         $state.go('photo');
       }, function(error) {

@@ -1,7 +1,7 @@
 <!-- header -->
 <header>
-    <!--Nav bar-->
 
+    <!--Nav bar-->
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -22,20 +22,26 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
-                    <li ng-class="{active: $state.current.name== 'photo'}">
+                    <li ng-class="{active: $state.current.name== 'discover'}">
+                        <a ui-sref="discover">
+                            <span class="glyphicon glyphicon-globe"></span>
+                            <span class="title">Discover</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active: $state.current.name== 'photo'}" ng-show="isLoggedIn()">
                         <a ui-sref="photo">
                             <span class="glyphicon glyphicon-picture"></span>
                             <span class="title">Photo</span>
                         </a>
                     </li>
-                    <li ng-class="{active: $state.current.name== 'video'}">
+                    <li ng-class="{active: $state.current.name== 'video'}" ng-show="isLoggedIn()">
                         <a ui-sref="video">
                             <span class="glyphicon glyphicon-film"></span>
                             <span class="title">Video</span>
                         </a>
                     </li>
 
-                    <li ng-class="{active: $state.current.name== 'sound'}">
+                    <li ng-class="{active: $state.current.name== 'sound'}" ng-show="isLoggedIn()">
                         <a ui-sref="sound">
                             <span class="glyphicon glyphicon-headphones"></span>
                             <span class="title">Sound</span>
@@ -44,18 +50,34 @@
                 </ul>
 
                 <!--Nav bar right-->
-
                 <ul class="nav navbar-nav navbar-right ">
                     <li ng-controller="searchController">
                         <form>
-                        <input type="text" ng-model="keywords" ng-change="search(keywords)">
+                            <input type="text" ng-model="keywords" ng-change="search(keywords)">
                         </form>
                     </li>
+
                     <li ng-class="{active: $state.current.name== 'uploadEdit'}">
-                        <a ui-sref="uploadEdit">
+                        <a ui-sref="uploadEdit" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-cloud-upload"></span>
                             <span class="title">Upload</span>
+                            <span class="caret"></span>
                         </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <p class="upload-instruct">You want to upload</p>
+                            </li>
+                            <li class="divider"></li>
+                            <a>
+                                <li>Photo</li>
+                            </a>
+                            <a>
+                                <li>Video</li>
+                            </a>
+                            <a>
+                                <li>Audio</li>
+                            </a>
+                        </ul>
                     </li>
                     <li ng-class="{active: $state.current.name== 'signup'}" ng-hide="isLoggedIn()">
                         <a ui-sref="signup" class="dropdown-toggle" data-toggle="dropdown">
