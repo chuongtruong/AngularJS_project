@@ -4,7 +4,6 @@ angular.module('myApp')
 
         $scope.videos = [];
         $scope.trsVideoThumbSrc = function (path) {
-            console.log($sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path + '.png'));
             return $sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path + '.png');
         };
 
@@ -14,18 +13,8 @@ angular.module('myApp')
                 if (file.type === "video") { // only file with type "video" will be listed
                     var fileId = file.fileId;
 
-                    var cmtRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/comments/file/' + fileId);
-                    file.comments = [];
-                    cmtRequest.then(function (cmtRes) {
-                        cmtRes.data.forEach(function (cmt) {
-                            file.comments.push(cmt);
-                        });
-                    });
-                    var desRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/file/' + fileId);
-                    file.description = "";
-                    desRequest.then(function (desRes) {
-                        file.description = desRes.data.description;
-                    });
+                    metaService.getComments(file);
+                    metaService.getDesc(file);
                     $scope.videos.push(file);
                 }
             });
@@ -34,22 +23,5 @@ angular.module('myApp')
             console.log("err", err);
         });
 
-        $scope.open = function (file) {
-            var modalInstance = $uibModal.open({
-                animation: $scope.animationsEnabled,
-                templateUrl: '../../views/lightbox.html',
-                controller: 'lightboxController',
-                size: 'lg',
-                resolve: {
-                    item: function () {
-                        return file;
-                    }
-                }
-
-            });
-        };
-
-
-
-
+        $scope.open = metaService.openModal;
     });
