@@ -2,9 +2,7 @@ angular.module('myApp')
     .controller('lightboxController', function ($http, $rootScope, $scope, $uibModalInstance, item, AjaxFactory) {
 
         $scope.file = item;
-
         $scope.item = item;
-
         $scope.isLiked = false;
         $rootScope.itemID = item.fileId;
 
@@ -14,7 +12,6 @@ angular.module('myApp')
             console.log("res", res);
             res.data.forEach(function (file) {
                 if ($rootScope.itemID === file.fileId) {
-
                     $scope.isLiked = true;
                 }
             })
@@ -44,7 +41,7 @@ angular.module('myApp')
             $uibModalInstance.dismiss('cancel');
         };
 
-        << << << < HEAD
+        
         //Like/unlike, comment
 
         $scope.unlike = function () {

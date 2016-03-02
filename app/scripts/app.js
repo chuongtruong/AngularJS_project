@@ -38,7 +38,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             parent: 'app',
             url: "/sound",
             templateUrl: 'sound.html',
-            controller:'audioController'
+            controller: 'audioController'
         })
         .state('uploadEdit', {
             parent: 'app',
@@ -89,22 +89,10 @@ app.run(function ($rootScope, $state) {
         }
     });
 
-<<<<<<< HEAD
-  $rootScope.isLoggedIn = function() {
-    var userId = localStorage.getItem("userID");
-    return !!userId;
-      
-  }
-});
-=======
-    //    $rootScope.isLoggedIn = function () {
-    //        var userId = localStorage.getItem("userID");
-    //        return !!userId;
-    //    }
-    //});
+
     $rootScope.isLoggedIn = function () {
         var userId = localStorage.getItem("userID");
         return !!userId;
+
     }
 });
->>>>>>> 27697aa63be0febc5307290f5c097aba39495ca6

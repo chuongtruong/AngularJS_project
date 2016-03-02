@@ -60,8 +60,6 @@ angular.module('myApp')
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             });
-
-            return ajaxFunctions;
         };
-
+        return ajaxFunctions;
     });
