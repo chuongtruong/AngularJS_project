@@ -13,18 +13,16 @@
       <hr>
       <div class="like_comment">
         <ul>
-          <li>
-            <a>
+          <li ng-hide="isLiked">
+            <a ng-click="like()">
               <span class="glyphicon glyphicon-heart"></span>Like
             </a>
           </li>
-            <li>
-<!--
-            <a>
-              <span class="glyphicon-red glyphicon-heart"></span>Like
+            <li ng-show="isLiked">
+            <a class="red" ng-click="unlike()">
+              <span class="glyphicon glyphicon-heart"></span>Like
             </a>
           </li>
--->
           <li>
             <a>
               <span class="glyphicon glyphicon-comment"></span>Comment

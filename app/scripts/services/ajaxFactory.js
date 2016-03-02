@@ -36,6 +36,24 @@ angular.module('myApp')
         }
       });
     };
+    
+    
+        ajaxFunctions.like = function(args) {
+      return $http.get(urlBase + 'like/' + $rootScope.itemID + '/' + localStorage.getItem("userID"), $httpParamSerializer(args), {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      });
+    };
+    
+            ajaxFunctions.unlike = function(args) {
+      return $http.get(urlBase + 'unlike/' + $rootScope.itemID + '/' + localStorage.getItem("userID"), $httpParamSerializer(args), {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      });
+    };
+
 
     return ajaxFunctions;
   });

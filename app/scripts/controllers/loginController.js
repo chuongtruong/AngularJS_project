@@ -14,6 +14,7 @@ angular.module('myApp')
                 if (response.data.status === "login ok") {
                     
                     localStorage.setItem("userID", response.data.userId);
+                    localStorage.setItem("username", $scope.uname);
                     $location.path('/loginSuccess');
                     console.log($location.path());
                 }

@@ -10,9 +10,9 @@
 <!--Script-->
 <!-- Second nav-->
 
-<div class="container-fluid">
-  <div align="center" class="sticky-nav">
-    <ul>
+<div align="center" class="container-fluid sticky-nav">
+  
+    <ul class="sticky-nav-menu row">
       <li>
         <a href="#">Newest</a>
       </li>
@@ -26,7 +26,7 @@
         <a href="#">discussing</a>
       </li>
     </ul>
-  </div>
+  
 </div>
 <!--End of the second nav-->
 
@@ -34,12 +34,13 @@
 
 
 <!--main-->
-<div class="container-fluid">
+<div class="container-fluid main-area">
   <div infinite-gallery>
     <a repeat-done ng-repeat="photo in photos" ng-click="open(photo)">
       <img alt="{{photo.title}}" ng-src="http://util.mw.metropolia.fi/uploads/{{photo.path}}" />
     </a>
   </div>
+    <button class="btn-primary" ng-click="loadMore()"> Load more </button>
 </div>
 <!--End of main-->
 

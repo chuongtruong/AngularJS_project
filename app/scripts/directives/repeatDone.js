@@ -8,6 +8,11 @@ angular.module("myApp")
           if (scope.$last) {
             parentScope.$last = true;
           }
+          scope.$on('onLoadMore',function(){
+              scope.$apply(function(){
+                  parentScope.$last = false;
+              });
+          })
         }
       };
     }

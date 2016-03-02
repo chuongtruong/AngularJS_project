@@ -29,19 +29,7 @@ angular.module('myApp')
         console.log("err", err);
       });
 
-    } else {
-      var request = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files/latest/20');
-      request.then(function(res) {
-        res.data.forEach(function(file) {
-          if (file.type === "image") {
-            $scope.photos.push(file);
-          }
-        });
-        console.log($scope.photos);
-      }, function(err) {
-        console.log("err", err);
-      });
-    }
+    };
     
     $scope.open = function(file) {
       var modalInstance = $uibModal.open({

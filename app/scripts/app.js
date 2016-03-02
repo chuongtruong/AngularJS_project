@@ -88,5 +88,6 @@ app.run(function($rootScope, $state) {
   $rootScope.isLoggedIn = function() {
     var userId = localStorage.getItem("userID");
     return !!userId;
+      
   }
 });
