@@ -16,8 +16,8 @@ angular.module('myApp')
                     console.log("response", response.data);
                     $state.go('searchResult');
                     $rootScope.$broadcast("searchSuccess", response.data);
-                    console.log("Response data", response.data)
-                    console.log("title", response.data[0][title]);
+                    console.log("Response data", response.data);
+                    
                     //                    if (!title === response.data.title) {
                     //                        alert("The title is not matched");
                     //                    }
