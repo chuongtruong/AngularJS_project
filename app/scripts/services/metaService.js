@@ -1,9 +1,9 @@
 angular.module('myApp')
     .factory('metaService', function ($http, $uibModal) {
-        
+
         var metaFunctions = {};
 
-        metaFunctions.getComments = function (args) {
+        metaFunctions.getComments = function (file) {
             var fileId = file.fileId;
             var cmtRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/comments/file/' + fileId);
             file.comments = [];
@@ -15,8 +15,8 @@ angular.module('myApp')
         };
 
 
-
-        metaFunctions.getDesc = function (args) {
+        metaFunctions.getDesc = function (file) {
+            var fileId = file.fileId;
             var desRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/file/' + fileId);
             file.description = "";
             desRequest.then(function (desRes) {
@@ -24,7 +24,7 @@ angular.module('myApp')
             });
         };
 
-        metaFunctions.openModal = function (args) {
+        metaFunctions.openModal = function (file) {
             var modalInstance = $uibModal.open({
                 //animation: this.animationsEnabled,
                 templateUrl: '../../views/lightbox.html',
