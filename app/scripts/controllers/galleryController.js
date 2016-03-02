@@ -1,52 +1,23 @@
 angular.module('myApp')
-  .controller('galleryController', function($scope, $http, $state, $uibModal) {
-    var userId = localStorage.getItem("userID");
-    $scope.photos = [];
-    if (userId) {
-      var request = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files/user/' + userId);
-      request.then(function(res) {
-        res.data.forEach(function(file) { // check each file inside the array 
-          if (file.type === "image") { // only file with type "image" will be listed
-            var fileId = file.fileId;
-
-            var cmtRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/comments/file/' + fileId);
-            file.comments = [];
-            cmtRequest.then(function(cmtRes) {
-              cmtRes.data.forEach(function(cmt) {
-                file.comments.push(cmt);
-              });
+    .controller('galleryController', function ($scope, $http, $state, $uibModal, MediaService, metaService) { //$sce,
+        var userId = localStorage.getItem("userID");
+        $scope.photos = [];
+        //        $scope.trsImageThumbSrc = function (path) {
+        //            return $sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path);
+        //        };
+        var request = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files/user/' + userId);
+        request.then(function (res) {
+            res.data.forEach(function (file) { // check each file inside the array 
+                if (file.type === "image") { // only file with type "image" will be listed
+                    var fileId = file.fileId;
+                    metaService.getComments(file);
+                    metaService.getDesc(file);
+                    $scope.photos.push(file);
+                }
             });
-            var desRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/file/' + fileId);
-            file.description = "";
-            desRequest.then(function(desRes) {
-              file.description = desRes.data.description;
-            });
-            $scope.photos.push(file);
-          }
+            console.log($scope.photos);
+        }, function (err) {
+            console.log("err", err);
         });
-        console.log($scope.photos);
-      }, function(err) {
-        console.log("err", err);
-      });
-
-    };
-    
-    $scope.open = function(file) {
-      var modalInstance = $uibModal.open({
-        animation: $scope.animationsEnabled,
-        templateUrl: '../../views/lightbox.html',
-        controller: 'lightboxController',
-        size: 'lg',
-        resolve: {
-          item: function() {
-            return file;
-          }
-        }
-
-      });
-    };
-    
-    
-
-
-  });
+        $scope.open = metaService.openModal;
+    });

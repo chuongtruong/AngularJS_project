@@ -3,7 +3,7 @@ angular.module('myApp')
         var timeout;
 
         $scope.results = {};
-        
+
         $scope.search = function (title) {
             if (timeout) { //if there is already a timeout in process cancel it
                 $timeout.cancel(timeout);
@@ -13,14 +13,19 @@ angular.module('myApp')
                 var request = AjaxFactory.search(title);
                 request.then(function (response) {
                     // console.log("response", response);
-                    console.log("response",response.data);
+                    console.log("response", response.data);
                     $state.go('searchResult');
                     $rootScope.$broadcast("searchSuccess", response.data);
+                    console.log("Response data", response.data);
+                    
+                    //                    if (!title === response.data.title) {
+                    //                        alert("The title is not matched");
+                    //                    }
                 }, function (error) {
                     console.log(error.data);
                 });
             }, 700);
         };
-        
-        
+
+
     }]);

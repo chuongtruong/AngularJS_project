@@ -1,11 +1,9 @@
 angular.module('myApp')
-    .factory('metaService', function ($uibModal, $http) {
-        //var mediaFiles = {};
+    .factory('metaService', function ($http, $uibModal) {
+
         var metaFunctions = {};
 
-        //if (file.type === "video") { // only file with type "video" will be listed
-        //
-        metaFunctions.getComments = function (file) { // check each file inside the array 
+        metaFunctions.getComments = function (file) {
             var fileId = file.fileId;
             var cmtRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/comments/file/' + fileId);
             file.comments = [];
@@ -39,8 +37,9 @@ angular.module('myApp')
                     }
 
                 });
-            }
+            };
             //$scope.mediaFiles.push(file);
             //console.log($scope.mediaFiles);
+
         return metaFunctions;
     });

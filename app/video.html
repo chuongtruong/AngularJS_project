@@ -1,3 +1,11 @@
+<!--For script-->
+<link rel="stylesheet" href="../bower_components/justifiedGallery/dist/css/justifiedGallery.css" />
+<script src="../bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js">
+</script>
+<script type="text/ng-template" id="myModalContent.html" src="views/lightbox.html">
+</script>
+<!--For script-->
+
 <!-- second nav-->
 <div class="container-fluid">
     <div align="center" class="sticky-nav">
@@ -21,30 +29,27 @@
 </div>
 <!--End of the second nav-->
 
-<h1>this is Video section</h1>
-<!-- video -->
 <!--
-    <div class="container-fluid">
-        <section id="video">
-            <div class="row text-center">
-                <i class="glyphicon glyphicon-facetime-video"></i>
-                <div class="sub-title">Video</div>
-                <div class="col-md-6 col-sm-4">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2mkWka3HJ04"></iframe>
-                    </div>
-                </div>
-                <div class="hidden-xs col-md-5 col-md-offset-1">
-                    <h3>The beautiful view of Iceland</h3>
-                    <div class="embed-responsive embed-responsive-4by3">
-                        Publishing Date : Aug 11, 2015
-                        <br> Contents : National Geographic HD Documentary
-                        <br> Maker : Nat Geo Wild, Nature & Wildlife
-                        <br>
-                    </div>
-                </div>
+<h1>this is Video section</h1>
+<div class="row thumbAlign">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="thumbnail" ng-repeat="video in videos">
+            <div class="caption">{{video.title}}</div>
+            <div ng-if="video.type == 'video'">
+                <img class="img" ng-src="{{trsVideoThumbSrc(video.path)}}" />
             </div>
-        </section>
+        </div>
     </div>
+</div>
 -->
-    <!-- End of video -->
+<!-- End of video -->
+
+<div infinite-gallery>
+    <div ng-click="open(video)" repeat-done ng-repeat="video in videos">
+        <a ng-if="video.type == 'video'">
+            <img alt="{{video.title}}" ng-src="{{trsVideoThumbSrc(video.path)}}" />
+        </a>
+    </div>
+
+
+</div>
