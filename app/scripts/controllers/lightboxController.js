@@ -3,10 +3,11 @@ angular.module('myApp')
         $scope.isImg = false;
         $scope.isAudio = false;
         $scope.isVideo = false;
+
         $scope.file = item;
         $scope.item = item;
-    console.log("type", item.type);
-    
+        console.log("type", item.type);
+
         $scope.trustSrc = function (path) {
             return $sce.trustAsResourceUrl(MediaService.mediaUrl + path);
         };
@@ -23,20 +24,11 @@ angular.module('myApp')
             $scope.isVideo = true;
         }
     
-        console.log("true, false", $scope.isVideo);
-
-
-        console.log("item", item.comments);
+        console.log("audio", $scope.isAudio);
+        console.log("photo", $scope.isImg);
+        console.log("video", $scope.isVideo);
 
         $rootScope.itemID = item.fileId;
-        console.log("itemID", $rootScope.itemID);
-
-        //    $scope.review ={};
-        //    $scope.addReview = function (content){
-        //        content.push($scope.review);
-        //        console.log('review', $scope.review);
-        //        $scope.review ={};
-        //    };
 
         $scope.animationsEnabled = true;
 

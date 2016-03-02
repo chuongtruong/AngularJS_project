@@ -2,8 +2,8 @@
     <div class="photo-area col-lg-12 col-md-12 col-xs-12">
         <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{item.path}}" ng-show="isImg" />
 
-        <video controls autoplay class="img-responsive">
-            <source ng-src="{{trustSrc(item.path)}}" type="video/mp4" ng-show="isVideo">
+        <video controls autoplay class="img-responsive" ng-show="isVideo">
+            <source ng-src="{{trustSrc(item.path)}}" type="video/mp4">
         </video>
 
         <audio controls class="img-responsive" ng-show="isAudio">
