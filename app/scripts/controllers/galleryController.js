@@ -5,8 +5,8 @@ angular.module('myApp')
     if (userId) {
       var request = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files/user/' + userId);
       request.then(function(res) {
-        res.data.forEach(function(file) {
-          if (file.type === "image") {
+        res.data.forEach(function(file) { // check each file inside the array 
+          if (file.type === "image") { // only file with type "image" will be listed
             var fileId = file.fileId;
 
             var cmtRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/comments/file/' + fileId);

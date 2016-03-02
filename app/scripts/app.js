@@ -2,92 +2,107 @@ var app = angular.module("myApp", ["ui.router", "ui.bootstrap"]);
 //"controllerModule" we can delete
 
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/home");
-  $stateProvider
-    .state('app', {
-      abstract: true,
-      templateUrl: 'navbarFooter.html',
-      controller: 'rootController'
-    })
-    .state('home', {
-      parent: 'app',
-      url: "/home",
-      templateUrl: 'home.html'
-    })
-    .state('discover', {
-      parent: 'app',
-      templateUrl: 'views/discover.html',
-      url: "/discover",
-      controller: 'discoverController'
-    })
-    .state('photo', {
-      parent: 'app',
-      url: "/photo",
-      templateUrl: 'photo.html',
-      controller: 'galleryController'
-  })
-    .state('video', {
-      parent: 'app',
-      url: "/video",
-      templateUrl: 'video.html'
-    })
-    .state('sound', {
-      parent: 'app',
-      url: "/sound",
-      templateUrl: 'sound.html'
-    })
-    .state('uploadEdit', {
-      parent: 'app',
-      url: "/uploadEdit",
-      templateUrl: 'uploadEdit.html'
-    })
-    .state('signup', {
-      parent: 'app',
-      url: "/signup",
-      templateUrl: 'views/registerForm.html',
-      controller: 'registerController'
-    })
-    .state('login', {
-      parent: 'app',
-      url: "/login",
-      templateUrl: 'views/loginForm.html',
-      controller: 'loginController'
-    })
-    .state('signupSuccess', {
-      parent: 'app',
-      url: "views/signupSuccess",
-      templateUrl: 'signupSuccess.html'
-    })
-  
-
-  .state('loginSuccess', {
-    parent: 'app',
-    url: "/loginSuccess",
-    templateUrl: 'loginSuccess.html'
-  });
-
-
+    $urlRouterProvider.otherwise("/home");
+    $stateProvider
+        .state('app', {
+            abstract: true,
+            templateUrl: 'navbarFooter.html',
+            controller: 'rootController'
+        })
+        .state('home', {
+            parent: 'app',
+            url: "/home",
+            templateUrl: 'home.html'
+        })
+        .state('discover', {
+            parent: 'app',
+            templateUrl: 'views/discover.html',
+            url: "/discover",
+            controller: 'discoverController'
+        })
+        .state('photo', {
+            parent: 'app',
+            url: "/photo",
+            templateUrl: 'photo.html',
+            controller: 'galleryController'
+        })
+        .state('video', {
+            parent: 'app',
+            url: "/video",
+            templateUrl: 'video.html'
+        })
+        .state('sound', {
+            parent: 'app',
+            url: "/sound",
+            templateUrl: 'sound.html'
+        })
+        .state('uploadEdit', {
+            parent: 'app',
+            url: "/uploadEdit",
+            templateUrl: 'uploadEdit.html'
+        })
+        .state('signup', {
+            parent: 'app',
+            url: "/signup",
+            templateUrl: 'views/registerForm.html',
+            controller: 'registerController'
+        })
+        .state('login', {
+            parent: 'app',
+            url: "/login",
+            templateUrl: 'views/loginForm.html',
+            controller: 'loginController'
+        })
+        .state('signupSuccess', {
+            parent: 'app',
+            url: "views/signupSuccess",
+            templateUrl: 'signupSuccess.html'
+        })
+        .state('loginSuccess', {
+            parent: 'app',
+            url: "/loginSuccess",
+            templateUrl: 'loginSuccess.html'
+        })
+        .state('searchResult', {
+            parent: 'app',
+            url: '/searchResult',
+            templateUrl: 'views/searchResult.html',
+            controller: 'searchResultController'
+        });
 });
 
 // security config
-app.run(function($rootScope, $state) {
-  $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
-    var userId = localStorage.getItem("userID");
-    if (toState.name === "uploadEdit") {
-      if (!userId) {
-        event.preventDefault();
-        alert("Please login first !");
-        $state.go("login");
-        return;
-      }
-    }
-  });
+app.run(function ($rootScope, $state) {
+    $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
+        var userId = localStorage.getItem("userID");
+        if (toState.name === "uploadEdit") {
+            if (!userId) {
+                event.preventDefault();
+                alert("Please login first !");
+                $state.go("login");
+                return;
+            }
+        }
+    });
 
+<<<<<<< HEAD
   $rootScope.isLoggedIn = function() {
     var userId = localStorage.getItem("userID");
     return !!userId;
       
   }
 });
+=======
+    //    $rootScope.isLoggedIn = function () {
+    //        var userId = localStorage.getItem("userID");
+    //        return !!userId;
+    //    }
+    //});
+    $rootScope.isLoggedIn = function () {
+        var userId = localStorage.getItem("userID");
+        return !!userId;
+    }
+});
+>>>>>>> 27697aa63be0febc5307290f5c097aba39495ca6

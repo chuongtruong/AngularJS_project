@@ -21,26 +21,51 @@
 </div>
 <!--End of the second nav-->
 
-<!-- audio -->
-    <div class="container">
-        <section id="Audio">
-            <div class="row text-center">
-                <i class="glyphicon glyphicon glyphicon-headphones glyphiconSty"></i>
-                <div class="sub-title">Audio</div>
-                <div class="col-md-6 col-sm-4">
-                    <audio controls="controls" src="audio/CubanSandwich.mp3">
-                        Your browser does not support the HTML5 audio element.
-                    </audio>
-                </div>
-                <div class="col-md-5 col-md-offset-1">
-                    <h3>Title : Cuban Sandwich</h3>
-                    <p>Copy right by : Kevin MacLeod (incompetech.com)
-                        <br> Liscence : Licensed under Creative Commons: By Attribution 3.0 License
-                        <br> Link for liscence : http://creativecommons.org/licenses/by/3.0/
-                        <br>
-                    </p>
-                </div>
+<div class="container-fluid">
+    <!--
+    <div infinite-gallery>
+        <a repeat-done ng-repeat="audio in audios" href="path/to/myimage2_original.jpg">
+            <div ng-if="file.type == 'audio'">
+-->
+    <div class="row thumbAlign">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="thumbnail" ng-repeat="audio in audios">
+                <audio controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
+                    <source ng-src="{{trustSrc(file.path)}}" type="audio/wav">
+                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp3">
+                </audio>
+                <!--
             </div>
-        </section>
-        <!-- End of audio -->
+        </a>
     </div>
+-->
+            </div>
+        </div>
+    </div>
+
+    <!-- audio -->
+    <!--
+<div class="container">
+    <section id="Audio">
+        <div class="row text-center">
+            <i class="glyphicon glyphicon glyphicon-headphones glyphiconSty"></i>
+            <div class="sub-title">Audio</div>
+            <div class="col-md-6 col-sm-4">
+                <audio controls="controls" src="audio/CubanSandwich.mp3">
+                    Your browser does not support the HTML5 audio element.
+                </audio>
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+                <h3>Title : Cuban Sandwich</h3>
+                <p>Copy right by : Kevin MacLeod (incompetech.com)
+                    <br> Liscence : Licensed under Creative Commons: By Attribution 3.0 License
+                    <br> Link for liscence : http://creativecommons.org/licenses/by/3.0/
+                    <br>
+                </p>
+            </div>
+        </div>
+    </section>   
+</div>
+-->
+    <!-- End of audio -->
