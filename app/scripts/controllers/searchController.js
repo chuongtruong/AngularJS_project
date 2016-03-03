@@ -12,20 +12,23 @@ angular.module('myApp')
             timeout = $timeout(function () {
                 var request = AjaxFactory.search(title);
                 request.then(function (response) {
-                    // console.log("response", response);
-                    console.log("response", response.data);
-                    $state.go('searchResult');
-                    $rootScope.$broadcast("searchSuccess", response.data);
-                    console.log("Response data", response.data);
-                    
-                    //                    if (!title === response.data.title) {
-                    //                        alert("The title is not matched");
-                    //                    }
-                }, function (error) {
-                    console.log(error.data);
-                });
+                        // console.log("response", response);
+                        console.log("response", response.data);
+                        $state.go('searchResult');
+                        $timeout(function () {
+                            $rootScope.$broadcast("searchSuccess", response.data);
+                        });
+                        console.log("Response data", response.data);
+
+                        //                    if (!title === response.data.title) {
+                        //                        alert("The title is not matched");
+                        //                    }
+                    },
+                    function (error) {
+                        console.log(error.data);
+                    });
             }, 700);
         };
 
 
-    }]);
+            }]);

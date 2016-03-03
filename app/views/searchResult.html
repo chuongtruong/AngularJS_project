@@ -16,40 +16,65 @@
     </li>
 </ul>
 -->
+<!-- Second nav-->
+<div align="center" class="container-fluid sticky-nav">
+    <ul class="sticky-nav-menu row">
+        <li>
+            <a ng-click="getImage()">Photo</a>
+        </li>
+        <li>
+            <a ng-click="getVideo()">Video</a>
+        </li>
+        <li>
+            <a ng-click="getAudio()">Sound</a>
+        </li>
+    </ul>
+</div>
+<!--End of the second nav-->
+
+<!--ng-repeat="file in mediaFiles"-->
+<div class="row">
+    <section id="image-result" ng-if="showImage">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-click="open(photo)" ng-repeat="photo in photos">
+            <!--            <div ng-if="file.type == 'image'">-->
+            <img class="img" ng-src="{{trsImageThumbSrc(photo.path)}}" />
+        </div>
+    </section>
 
 
-<div class="row thumbAlign">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <div class="thumbnail" ng-click="open(file)" ng-repeat="file in mediaFiles">
-            <div class="caption">
-                <h3>{{ file.title }}</h3>
+    <!--            <div ng-if="file.type == 'audio'">-->
+    <section id="audio-result" ng-if="showAudio">>
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-click="open(audio)" ng-repeat="audio in audios">
+                <video controls class="img" poster="/images/audioIcon1.png">
+                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp4">
+                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/wav">
+                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp3">
+                </video>
             </div>
-            <div ng-if="file.type == 'image'">
-                <img class="img" ng-src="{{trsImageThumbSrc(file.path)}}" />
-                
-            </div>
-            <div ng-if="file.type == 'audio'">
-                <audio controls class="img">
-                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
-                    <source ng-src="{{trustSrc(file.path)}}" type="audio/wav">
-                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp3">
-                </audio>
-            </div>
-            <div ng-if="file.type == 'video'">
-                <img class="img" ng-src="{{trsVideoThumbSrc(file.path)}}" />
-            </div>
-            <!--
+    </section>
+
+ <section id="video-result" ng-if="showVideo">>
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-click="open(video)" ng-repeat="video in videos">
+        <!--            <div ng-if="file.type == 'video'">-->
+            <img class="img" ng-src="{{trsVideoThumbSrc(video.path)}}" />
+        </div>
+    </section>
+</div>
+
+
+
+<!--
                 <video controls class="img">
                     <source ng-src="{{trsVideoThumbSrc(file.path)}}" type="video/mp4">
                 </video>
 -->
-            <!--            </div>-->
-            <!--                            <div class="img" ng-attr-style="background-image:url({{trustSrc(file.path)}});"></div>-->
-            <!--
+<!--            </div>-->
+<!--                            <div class="img" ng-attr-style="background-image:url({{trustSrc(file.path)}});"></div>-->
+<!--
             <div class="img" ng-attr-style="background-image:url({{trustSrc(file.fileId)}});"></div>
 -->
 
-        </div>
-    </div>
+</div>
+</div>
 </div>
 </div>
