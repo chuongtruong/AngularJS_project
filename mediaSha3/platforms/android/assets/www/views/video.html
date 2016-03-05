@@ -1,0 +1,13 @@
+<!--For script--> <link rel=stylesheet href="../bower_components/justifiedGallery/dist/css/justifiedGallery.css"> <script src=../bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js></script> <script type=text/ng-template id=myModalContent.html src=views/lightbox.html></script> <!--For script--> <!--
+<h1>this is Video section</h1>
+<div class="row thumbAlign">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="thumbnail" ng-repeat="video in videos">
+            <div class="caption">{{video.title}}</div>
+            <div ng-if="video.type == 'video'">
+                <img class="img" ng-src="{{trsVideoThumbSrc(video.path)}}" />
+            </div>
+        </div>
+    </div>
+</div>
+--> <!-- End of video --> <div infinite-gallery> <div ng-click=open(video) repeat-done ng-repeat="video in videos"> <a ng-if="video.type == 'video'"> <img alt={{video.title}} ng-src="{{trsVideoThumbSrc(video.path)}}"> </a> </div> </div>

@@ -9,7 +9,7 @@ angular.module('myApp')
 //        "email": $scope.email
 //      };
 
-    .controller('registerController', ['$scope', 'AjaxFactory', '$location', function ($scope, AjaxFactory, $location) {
+    .controller('registerController', ['$scope', 'AjaxFactory', function ($scope, AjaxFactory,$state) {
 
         //    app.controller('TestCtrl2', ['$scope', '$controller', function ($scope, $controller) {
         //   var testCtrl1ViewModel = $scope.$new(); //You need to supply a scope while instantiating.
@@ -51,8 +51,7 @@ angular.module('myApp')
                         console.log(response.data.status);
                         if (response.data.status === "login ok") {
                             localStorage.setItem("userID", response.data.userId);
-                            $location.path('/signupSuccess');
-                            console.log($location.path());
+                            $state.go('home');
                         }
                     }, function (error) {
                         console.log(error.data);

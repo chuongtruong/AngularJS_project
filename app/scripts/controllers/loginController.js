@@ -1,24 +1,24 @@
 angular.module('myApp')
-    .controller('loginController', ['$scope', 'AjaxFactory', '$location', function ($scope, AjaxFactory, $location) {
-        
+    .controller('loginController', ['$scope', 'AjaxFactory', function ($scope, AjaxFactory, $state) {
+
         $scope.login = function () {
             var data = {
                 "username": $scope.uname,
                 "password": $scope.pwd
             };
-            
-      var request = AjaxFactory.login(data);
+
+            var request = AjaxFactory.login(data);
             request.then(function (response) {
                 console.log(response.data);
                 console.log(response.data.status);
                 if (response.data.status === "login ok") {
-                    
+
                     localStorage.setItem("userID", response.data.userId);
                     localStorage.setItem("username", $scope.uname);
-                    $location.path('/loginSuccess');
-                    console.log($location.path());
+                    alert("Login success!");
+                    $state.go('home');
                 }
-                
+
                 if (response.data.status === "wrong username or password") {
                     console.log("Wrong username or password!");
                     var loginMgs = document.getElementById("msgOfLogin");
@@ -29,4 +29,3 @@ angular.module('myApp')
             });
         };
     }]);
-

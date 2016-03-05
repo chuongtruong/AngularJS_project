@@ -8,13 +8,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('app', {
             abstract: true,
-            templateUrl: 'navbarFooter.html',
+            templateUrl: 'views/navbarFooter.html',
             controller: 'rootController'
         })
         .state('home', {
             parent: 'app',
             url: "/home",
-            templateUrl: 'home.html'
+            templateUrl: 'views/home.html'
         })
         .state('discover', {
             parent: 'app',
@@ -25,13 +25,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('photo', {
             parent: 'app',
             url: "/photo",
-            templateUrl: 'photo.html',
+            templateUrl: 'views/photo.html',
             controller: 'galleryController'
         })
         .state('video', {
             parent: 'app',
             url: "/video",
-            templateUrl: 'video.html',
+            templateUrl: 'views/video.html',
             controller: 'videoController'
         })
         .state('sound', {
@@ -43,7 +43,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('uploadEdit', {
             parent: 'app',
             url: "/uploadEdit",
-            templateUrl: 'uploadEdit.html'
+            templateUrl: 'views/uploadEdit.html'
         })
         .state('signup', {
             parent: 'app',
@@ -61,11 +61,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             parent: 'app',
             url: "views/signupSuccess",
             templateUrl: 'signupSuccess.html'
-        })
-        .state('loginSuccess', {
-            parent: 'app',
-            url: "/loginSuccess",
-            templateUrl: 'loginSuccess.html'
         })
         .state('searchResult', {
             parent: 'app',
