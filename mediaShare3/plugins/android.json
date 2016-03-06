@@ -9,6 +9,18 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "fi.metropolia.softee.medisShare3"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "fi.metropolia.softee.medisShare3"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "fi.metropolia.softee.medisShare3"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "fi.metropolia.softee.medisShare3"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "fi.metropolia.softee.medisShare3"
         }
     },
     "dependent_plugins": {}

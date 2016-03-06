@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
-<!--    <script src="/bower_components/modernizr/modernizr.js"></script>-->
+    <!--    <script src="/bower_components/modernizr/modernizr.js"></script>-->
     <script src="/bower_components/modernizr/src/Modernizr.js"></script>
     <!-- endbuild -->
     <!--Fonts-->
@@ -39,11 +39,13 @@
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js"></script>
     <script src="/bower_components/angular-audio/app/angular.audio.js"></script>
+    <script src="/bower_components/ngCordova/dist/ng-cordova.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
 
     <!-- build:js(.) scripts/plugins.js -->
+    <!-- Include angular files & plugins -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
@@ -59,6 +61,7 @@
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    
 
     <!-- endbuild -->
 
@@ -81,6 +84,8 @@
     <script src="scripts/controllers/searchResultController.js"></script>
     <script src="scripts/controllers/discoverController.js"></script>
     <script src="scripts/controllers/lightboxController.js"></script>
+    <script src="scripts/controllers/videoRecordController.js"></script>
+    <script src="scripts/controllers/SoundRecordController.js"></script>
 
 
     <!-- Directives -->
@@ -90,14 +95,16 @@
     <script src="scripts/directives/showFile.js"></script>
     <script src="scripts/directives/infiniteGallery.js"></script>
     <script src="scripts/directives/repeatDone.js"></script>
-
+    <script src="scripts/directives/videoRecordModal.js"></script>
+    <script src="scripts/directives/soundRecordModal.js"></script>
 
     <!-- Services -->
     <script src="scripts/services/ajaxFactory.js"></script>
     <script src="scripts/services/mediaService.js"></script>
     <script src="scripts/services/metaService.js"></script>
 
-   
+
+
     <!-- endbuild -->
 
 
