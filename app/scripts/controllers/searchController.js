@@ -3,10 +3,13 @@ angular.module('myApp')
         var timeout;
 
         $scope.results = {};
+        $rootScope.keyword = '';
 
         $scope.search = function (title) {
             if (timeout) { //if there is already a timeout in process cancel it
                 $timeout.cancel(timeout);
+                $rootScope.keyword = title;
+                console.log($rootScope.keyword);
             }
 
             timeout = $timeout(function () {
@@ -15,6 +18,7 @@ angular.module('myApp')
                         // console.log("response", response);
                         console.log("response", response.data);
                         $state.go('searchResult');
+                        
                         $timeout(function () {
                             $rootScope.$broadcast("searchSuccess", response.data);
                         });

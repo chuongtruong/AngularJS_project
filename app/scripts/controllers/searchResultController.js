@@ -23,23 +23,28 @@ angular.module('myApp')
 //    $scope.getVideo = $scope.setView(showVideo, showAudio, showImage);
 //    
 //    $scope.getAudio = $scope.setView(showAudio, showImage, showVideo);
-//    
+//  
+    // var showImage, showAudio, showVideo;
+    $scope.showing = '';
     $scope.getImage = function() {
         $scope.showImage = true;
         $scope.showAudio = false;
         $scope.showVideo = false;
+        $scope.showing = 'image';
     };
     
         $scope.getAudio = function() {
         $scope.showImage = false;
         $scope.showAudio = true;
         $scope.showVideo = false;
+        $scope.showing = 'audio';    
     };
     
         $scope.getVideo = function() {
         $scope.showImage = false;
         $scope.showAudio = false;
         $scope.showVideo = true;
+        $scope.showing = 'video';
     };
 
         $scope.trsVideoThumbSrc = function (path) {

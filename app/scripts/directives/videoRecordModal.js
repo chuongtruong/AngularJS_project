@@ -3,7 +3,7 @@ angular.module('myApp')
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'scripts/video/videoRecordModal.html',
+            templateUrl: 'views/editVideoTemplate.html',
             controller: 'VideoRecordController'
         };
     });

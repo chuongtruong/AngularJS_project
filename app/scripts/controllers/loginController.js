@@ -16,7 +16,7 @@ angular.module('myApp')
                     localStorage.setItem("userID", response.data.userId);
                     localStorage.setItem("username", $scope.uname);
                     //alert("Login success!");
-                    //$state.go('home');
+                    $state.go('home');
                 }
 
                 if (response.data.status === "wrong username or password") {

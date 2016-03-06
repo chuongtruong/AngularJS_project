@@ -16,17 +16,53 @@
     </li>
 </ul>
 -->
+
+
+    
+<!--
+<style>
+    .active {
+        color : red;
+        background-color: red;
+    }
+</style>
+-->
+
+    <style>
+    .active {
+        border:1px solid #000;
+        background-color:#fff;
+        color:#000;
+        width:300px;
+        height: 100px;
+        overflow-y: scroll;
+    }
+    </style>
+
+
+<!--
+<script>
+    $("a").click(function() {
+        if ($(this).hasClass('active')){
+            $(this).css('background-color', 'blue');
+        } else {
+            $(this).css('background-color', 'black');
+        }
+    });    
+</script>
+-->
+
 <!-- Second nav-->
 <div align="center" class="container-fluid sticky-nav">
     <ul class="sticky-nav-menu row">
-        <li>
-            <a ng-click="getImage()">Photo</a>
+        <li><span class="glyphicon glyphicon-picture"></span>
+            <a ng-click="getImage()" ng-class="{active:showing == 'image'}"><span ng-bind="keyword"></span></a>
         </li>
-        <li>
-            <a ng-click="getVideo()">Video</a>
+        <li><span class="glyphicon glyphicon-film"></span>
+            <a ng-click="getVideo()" ng-class="{active:showing == 'video'}"><span ng-bind="keyword"></span></a>
         </li>
-        <li>
-            <a ng-click="getAudio()">Sound</a>
+        <li><span class="glyphicon glyphicon-headphones"></span>
+            <a ng-click="getAudio()" ng-class="{active:showing == 'audio'}"><span ng-bind="keyword"></span></a>
         </li>
     </ul>
 </div>

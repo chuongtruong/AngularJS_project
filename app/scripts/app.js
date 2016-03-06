@@ -52,6 +52,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'VideoRecordController'
         })
         .state('editAudio', {
+            replace: true,
             parent: 'app',
             url: "/editAudio",
             templateUrl: 'views/editAudio.html',

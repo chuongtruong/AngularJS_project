@@ -3,7 +3,7 @@ angular.module('myApp')
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'scripts/sound/soundRecordModal.html',
+            templateUrl: 'views/editAudioTemplate.html',
             controller: 'SoundRecordController'
         };
     });
