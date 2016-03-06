@@ -7,7 +7,6 @@
 </ul>
 -->
 
-
 <!--
 <ul class="searchResult">
     <li ng-repeat="file in results">
@@ -19,14 +18,29 @@
 <!-- Second nav-->
 <div align="center" class="container-fluid sticky-nav">
     <ul class="sticky-nav-menu row">
-        <li>
+        
+        <li ng-show="showImage">
             <a ng-click="getImage()">Photo</a>
         </li>
-        <li>
+        
+        <li class="isActive" ng-show="!showImage">
+            <a ng-click="getImage()">Photo</a>
+        </li>
+        
+        <li ng-show="showVideo">
             <a ng-click="getVideo()">Video</a>
         </li>
-        <li>
+        
+        <li class="isActive" ng-show="!showVideo">
+            <a ng-click="getImage()">Video</a>
+        </li>
+        
+        <li ng-show="showAudio">
             <a ng-click="getAudio()">Sound</a>
+        </li>
+        
+        <li class="isActive" ng-show="!showSound">
+            <a ng-click="getImage()">Sound</a>
         </li>
     </ul>
 </div>
