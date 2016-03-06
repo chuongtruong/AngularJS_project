@@ -1,112 +1,101 @@
 <!-- header -->
 <header>
 
-    <!--Nav bar-->
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
+  <!--Nav bar-->
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-                <!--Nav bar | Nav bar- left-->
-                <a class="navbar-brand" href="#">
+        <!--Nav bar | Nav bar- left-->
 
-                    <img class="img-responsive" src="images/logo.png" />
-                </a>
-            </div>
+        <a class="navbar-brand" href="#">
+          <img class="img-responsive" src="images/logo.png" />
+        </a>
+      </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-left">
-                    <li ng-class="{active: $state.current.name== 'discover'}">
-                        <a ui-sref="discover">
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="title">Discover</span>
-                        </a>
-                    </li>
-                    <li ng-class="{active: $state.current.name== 'photo'}" ng-show="isLoggedIn()">
-                        <a ui-sref="photo">
-                            <span class="glyphicon glyphicon-picture"></span>
-                            <span class="title">Photo</span>
-                        </a>
-                    </li>
-                    <li ng-class="{active: $state.current.name== 'video'}" ng-show="isLoggedIn()">
-                        <a ui-sref="video">
-                            <span class="glyphicon glyphicon-film"></span>
-                            <span class="title">Video</span>
-                        </a>
-                    </li>
+      <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                    <li ng-class="{active: $state.current.name== 'sound'}" ng-show="isLoggedIn()">
-                        <a ui-sref="sound">
-                            <span class="glyphicon glyphicon-headphones"></span>
-                            <span class="title">Sound</span>
-                        </a>
-                    </li>
-                </ul>
+        <ul class="nav navbar-nav pull-left">
+          <li ng-class="{active: $state.current.name== 'discover'}">
+            <a ui-sref="discover" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="glyphicon glyphicon-globe"></span>
+              <span class="title">Discover</span>
+            </a>
+          </li>
+          <li ng-class="{active: $state.current.name== 'photo'}" ng-show="isLoggedIn()">
+            <a ui-sref="photo" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="glyphicon glyphicon-picture"></span>
+              <span class="title">Photo</span>
+            </a>
+          </li>
+          <li ng-class="{active: $state.current.name== 'video'}" ng-show="isLoggedIn()">
+            <a ui-sref="video">
+              <span class="glyphicon glyphicon-film"></span>
+              <span class="title">Video</span>
+            </a>
+          </li>
 
-                <!--Nav bar right-->
-                <ul class="nav navbar-nav navbar-right ">
-                    <li ng-controller="searchController">
-                        <form>
-                            <input type="text" ng-model="keywords" ng-change="search(keywords)">
-                        </form>
-                    </li>
+          <li ng-class="{active: $state.current.name== 'sound'}" ng-show="isLoggedIn()">
+            <a ui-sref="sound">
+              <span class="glyphicon glyphicon-headphones"></span>
+              <span class="title">Sound</span>
+            </a>
+          </li>
+        </ul>
 
-                    <li ng-class="{active: $state.current.name== 'uploadEdit'}">
-                        <a ui-sref="uploadEdit" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-cloud-upload"></span>
-                            <span class="title">Upload</span>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <p class="upload-instruct">You want to upload</p>
-                            </li>
-                            <li class="divider"></li>
-                            <a>
-                                <li>Photo</li>
-                            </a>
-                            <a>
-                                <li>Video</li>
-                            </a>
-                            <a>
-                                <li>Audio</li>
-                            </a>
-                        </ul>
-                    </li>
-                    <li ng-class="{active: $state.current.name== 'signup'}" ng-hide="isLoggedIn()">
-                        <a ui-sref="signup" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-pencil"></span>
-                            <span class="title">Sign up</span>
-                            <span class="cart"></span>
-                        </a>
+        <!--Nav bar right-->
+        <ul class="nav navbar-nav pull-right">
+          <li ng-controller="searchController">
+            <a>
+              <form class="search-bar">
+                <input type="text" ng-model="keywords" ng-change="search(keywords)" placeholder="Type some keywords">
+              </form>
+            </a>
+          </li>
 
-                    </li>
-                    <li class="dropdown" ng-hide="isLoggedIn()" ng-class="{active: $state.current.name== 'login'}">
-                        <a ui-sref="login" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-user"></span>
-                            <span class="title">Login</span>
-                            <span class="cart"></span>
-                        </a>
-                    </li>
-                    <li class="dropdown" ng-show="isLoggedIn()">
-                        <a ng-click="logout()" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-off"></span>
-                            <span class="title">Logout</span>
-                            <span class="cart"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+          <li ng-class="{active: $state.current.name == 'uploadEdit'}">
+            <a ui-sref="uploadEdit" class="dropdown-toggle" data-toggle="dropdown" >
+              <span class="glyphicon glyphicon-cloud-upload"></span>
+              <span class="title">Upload</span>
+            </a>
+          </li>
+          <li ng-class="{active: $state.current.name== 'signup'}" ng-hide="isLoggedIn()">
+            <a ui-sref="signup" class="dropdown-toggle" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="glyphicon glyphicon-pencil"></span>
+              <span class="title">Sign up</span>
+              <span class="cart"></span>
+            </a>
+
+          </li>
+          <li class="dropdown" ng-hide="isLoggedIn()" ng-class="{active: $state.current.name== 'login'}">
+            <a ui-sref="login" class="dropdown-toggle" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="glyphicon glyphicon-user"></span>
+              <span class="title">Login</span>
+              <span class="cart"></span>
+            </a>
+          </li>
+          <li class="dropdown" ng-show="isLoggedIn()" data-toggle="collapse" data-target=".nav-collapse">
+            <a ng-click="logout()" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="glyphicon glyphicon-off"></span>
+              <span class="title">Logout</span>
+              <span class="cart"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 </header>
+
+
 <!-- End of header -->
 
 

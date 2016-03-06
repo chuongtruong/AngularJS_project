@@ -8,7 +8,7 @@ angular.module('myApp')
             if (timeout) { //if there is already a timeout in process cancel it
                 $timeout.cancel(timeout);
             }
-
+            console.log("title",title);
             timeout = $timeout(function () {
                 var request = AjaxFactory.search(title);
                 request.then(function (response) {

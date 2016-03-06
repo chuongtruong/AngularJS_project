@@ -5,6 +5,7 @@ angular.module('myApp')
         $scope.trsVideoThumbSrc = function (path) {
             return $sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path + '.png');
         };
+    
 
         var request = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files/user/' + userId);
         request.then(function (res) {

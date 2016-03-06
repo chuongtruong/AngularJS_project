@@ -1,5 +1,5 @@
 angular.module('myApp')
-    .controller('loginController', ['$scope', 'AjaxFactory', '$location', function ($scope, AjaxFactory, $location) {
+    .controller('loginController', ['$scope', 'AjaxFactory', '$location', function ($scope, AjaxFactory, $location, $state) {
         
         $scope.login = function () {
             var data = {
@@ -15,8 +15,7 @@ angular.module('myApp')
                     
                     localStorage.setItem("userID", response.data.userId);
                     localStorage.setItem("username", $scope.uname);
-                    $location.path('/loginSuccess');
-                    console.log($location.path());
+                    
                 }
                 
                 if (response.data.status === "wrong username or password") {

@@ -1,81 +1,15 @@
-<!-- second nav-->
 <div class="container-fluid">
-    <div align="center" class="sticky-nav">
-        <ul>
-            <li>
-                <a href="#">Newest</a>
-            </li>
-            <li>
-                <a href="#">popular</a>
-            </li>
-            <li>
-                <a href="#">top-rated</a>
-            </li>
-            <li>
-                <a href="#">discussing</a>
-            </li>
-
-        </ul>
-
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-repeat="audio in audios">
+      <div class="thumbAlign">
+        <div class="sub-title">{{audio.title}}</div>
+        <audio controls class="img">
+          <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp4">
+            <source ng-src="{{trustSrc(audio.path)}}" type="audio/wav">
+              <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp3">
+        </audio>
+      </div>
     </div>
+  </div>
 </div>
-<!--End of the second nav-->
 
-<div class="container-fluid">
-    <!--
-    <div infinite-gallery>
-        <a repeat-done ng-repeat="audio in audios" href="path/to/myimage2_original.jpg">
-            <div ng-if="file.type == 'audio'">
--->
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-repeat="audio in audios">
-            <div class="thumbAlign">
-                <div class="sub-title">{{audio.title}}</div>
-                <audio controls class="img">
-                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp4">
-                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/wav">
-                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp3">
-                </audio>
-            </div>
-        </div>
-    </div>
-    
-<!--
-     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-repeat="audio in audios">
-            <div class="thumbAlign">
-                <div class="sub-title">{{audio.title}}</div>
-                <audio controls class="img">
-                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp4">
-                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/wav">
-                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp3">
-                </audio>
-            </div>
-        </div>
--->
-
-    <!-- audio -->
-    <!--
-<div class="container">
-    <section id="Audio">
-        <div class="row text-center">
-            <i class="glyphicon glyphicon glyphicon-headphones glyphiconSty"></i>
-            <div class="sub-title">Audio</div>
-            <div class="col-md-6 col-sm-4">
-                <audio controls="controls" src="audio/CubanSandwich.mp3">
-                    Your browser does not support the HTML5 audio element.
-                </audio>
-            </div>
-            <div class="col-md-5 col-md-offset-1">
-                <h3>Title : Cuban Sandwich</h3>
-                <p>Copy right by : Kevin MacLeod (incompetech.com)
-                    <br> Liscence : Licensed under Creative Commons: By Attribution 3.0 License
-                    <br> Link for liscence : http://creativecommons.org/licenses/by/3.0/
-                    <br>
-                </p>
-            </div>
-        </div>
-    </section>   
-</div>
--->
-    <!-- End of audio -->

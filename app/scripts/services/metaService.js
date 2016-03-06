@@ -26,7 +26,7 @@ angular.module('myApp')
         metaFunctions.openModal = function (file) {
                 console.log("here");
                 var modalInstance = $uibModal.open({
-                    //animation: this.animationsEnabled,
+                    animation: this.animationsEnabled,
                     templateUrl: '../../views/lightbox.html',
                     controller: 'lightboxController',
                     size: 'lg',
@@ -38,8 +38,5 @@ angular.module('myApp')
 
                 });
             };
-            //$scope.mediaFiles.push(file);
-            //console.log($scope.mediaFiles);
-
         return metaFunctions;
     });
