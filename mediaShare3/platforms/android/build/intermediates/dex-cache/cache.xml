@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\WONSEOB\MediaSharing\AngularJS_project\mediaShare3\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a96b6750ac68886ca1077843a23615cd96f17261">
+        <dex dex="C:\Users\WONSEOB\MediaSharing\AngularJS_project\mediaShare3\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_b4275ae3cb2b114265be37379fa99b8bde35a063.jar" />
+    </item>
+
+</items>
