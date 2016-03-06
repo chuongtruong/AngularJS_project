@@ -3,44 +3,59 @@ angular.module('myApp')
         $scope.photos = [];
         $scope.audios = [];
         $scope.videos = [];
+
+
+        //  $scope.collection = ["Photo", "Video", "Sound"];
+        //
+        //  $scope.selectedIndex = 0; // Whatever the default selected index is, use -1 for no selection
+        //
+        //  $scope.itemClicked = function ($index) {
+        //    $scope.selectedIndex = $index;
+        //      console.log("index", $scope.selectedIndex);
+        //  };
+
         //$scope.mediaFiles = [];
         $scope.trustSrc = function (path) {
             return $sce.trustAsResourceUrl(MediaService.mediaUrl + path);
         };
-    
-    $scope.showImage = true;
-    $scope.showAudio = true;
-    $scope.showVideo = true;
-    
-    $scope.setView = function(arg1, arg2, arg3) {
-        arg1 = true;
-        arg2 = false;
-        arg3 = false;
-    };
-    
-//    $scope.getImage = $scope.setView($showImage, showAudio, showVideo);
-//    
-//    $scope.getVideo = $scope.setView(showVideo, showAudio, showImage);
-//    
-//    $scope.getAudio = $scope.setView(showAudio, showImage, showVideo);
-//    
-    $scope.getImage = function() {
+
         $scope.showImage = true;
-        $scope.showAudio = false;
-        $scope.showVideo = false;
-    };
-    
-        $scope.getAudio = function() {
-        $scope.showImage = false;
         $scope.showAudio = true;
-        $scope.showVideo = false;
-    };
-    
-        $scope.getVideo = function() {
-        $scope.showImage = false;
-        $scope.showAudio = false;
         $scope.showVideo = true;
-    };
+
+
+
+        //    $scope.setView = function(arg1, arg2, arg3) {
+        //        arg1 = true;
+        //        arg2 = false;
+        //        arg3 = false;
+        //    };
+
+        //    $scope.getImage = $scope.setView($showImage, showAudio, showVideo);
+        //    
+        //    $scope.getVideo = $scope.setView(showVideo, showAudio, showImage);
+        //    
+        //    $scope.getAudio = $scope.setView(showAudio, showImage, showVideo);
+        //    
+        $scope.getImage = function () {
+            $scope.showImage = true;
+            $scope.showAudio = false;
+            $scope.showVideo = false;
+        };
+
+
+        $scope.getAudio = function () {
+            $scope.showImage = false;
+            $scope.showAudio = true;
+            $scope.showVideo = false;
+
+        };
+
+        $scope.getVideo = function () {
+            $scope.showImage = false;
+            $scope.showAudio = false;
+            $scope.showVideo = true;
+        };
 
         $scope.trsVideoThumbSrc = function (path) {
             return $sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path + '.png');

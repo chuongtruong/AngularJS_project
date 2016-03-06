@@ -16,12 +16,12 @@ angular.module('myApp')
                     localStorage.setItem("userID", response.data.userId);
                     localStorage.setItem("username", $scope.uname);
                     //alert("Login success!");
-                    //$state.go('home');
+                    $state.go('home');
                 }
 
                 if (response.data.status === "wrong username or password") {
                     console.log("Wrong username or password!");
-                    var loginMgs = document.getElementById("msgOfLogin");
+                    var loginMgs =  document.getElementById("msgOfLogin");
                     loginMgs.innerText = 'Wrong username or password';
                 }
             }, function (error) {

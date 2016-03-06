@@ -13,8 +13,10 @@
                 <br>
             <form id="fileForm">
                 Title of Image:
+                <span style="color: #FF0000;" >*</span>
                 <input name="title" type="text">&nbsp;&nbsp;
                 Description:
+                <span style="color: #FF0000;" >*</span>
                 <input name="description" ng-init="desc='Default description'" ng-model="desc" type="text">
                 <br>
                 <br>
@@ -22,7 +24,7 @@
                 <!-- Insert fallback content here -->
                 </canvas>
                 <br>
-                <button class="btn btn-primary pull-right uploadBtnSty" ng-click="sendImage()">Upload</button>
+                
             </form>
 <!--             <a class="btn btn-default pull-right uploadBtnSty" ng-href="{{ url }}" download="edited" ng-click="saveImage()">Save image</a>-->
             <br>
@@ -123,5 +125,6 @@
                 </div>
             </div>
         </div>
+        <button class="btn btn-primary pull-right uploadBtnSty" ng-click="sendImage()">Upload</button>
     </div>
 </div>

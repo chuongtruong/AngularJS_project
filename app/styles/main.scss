@@ -451,6 +451,11 @@ form .comment-submit {
 }
 
 //***** searchResult.html *****//
+
+.isActive{
+    border-bottom: 3px solid red;
+}
+
 .thumbAlign {
     margin: 0 auto;
 }
@@ -477,7 +482,7 @@ form .comment-submit {
 .main-area {
     background-color: #F7F8FA;
     padding: 0 4% 0 4%;
-}
+}  
 
 @media screen and (min-width: 1000px) {
     .thumbnail {
@@ -490,4 +495,55 @@ form .comment-submit {
         width: 50%;
     }
 }
+
+.uploadBtnSty {
+    margin-bottom: 50px;
+    background-color: blueviolet;
+}
+.liked {
+    color: red;
+    
+}
+
+
+.fullscreen-bg_video{
+width: 100%;
+height: 100%;
+}
+.section-heading {
+    color: aqua;
+}
+//.sticky-nav-menu row : active {
+//    background-color: red;
+//}
+//.main-login { 
+// background: url('images/second.jpg') no-repeat center center fixed; 
+// -webkit-background-size: cover;
+// -moz-background-size: cover;
+// -o-background-size: cover;
+// background-size: cover;
+//
+//
+//.panel-default {
+// opacity: 0.9;
+// margin-top:30px;
+//}
+//.form-group.last {
+// margin-bottom:0px;
+//}
+.login-panel { 
+  background: url(http://lorempixel.com/1920/1920/city/9/) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    width: 100%;
+}
+
+.panel-default {
+opacity: 0.9;
+margin-top:30px;
+}
+.form-group.last { margin-bottom:0px; }
+
 
