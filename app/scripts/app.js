@@ -55,7 +55,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             parent: 'app',
             url: "/editAudio",
             templateUrl: 'views/editAudio.html',
-            controller: 'videoRecordController'
+            controller: 'SoundRecordController'
         })
         .state('signup', {
             parent: 'app',
