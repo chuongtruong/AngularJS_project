@@ -1,26 +1,27 @@
 {
-    "name": "bootstrap",
-    "private": true,
-    "dependencies": {
-        "bootstrap-sass": "~3.3.5",
-        "angular-ui-router": "~0.2.18",
-        "justifiedGallery": "justified-gallery#~3.6.1",
-        "bootstrap": "~3.3.6",
-        "angular-bootstrap": "~1.1.2",
-        "angular-audio": "~1.7.1"
-    },
-    "overrides": {
-        "bootstrap-sass": {
-            "main": [
+  "name": "bootstrap",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "angular-ui-router": "~0.2.18",
+    "justifiedGallery": "justified-gallery#~3.6.1",
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~1.1.2",
+    "angular-audio": "~1.7.1",
+    "ngCordova": "~0.1.24-alpha"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
         "assets/stylesheets/_bootstrap.scss",
         "assets/fonts/bootstrap/*",
         "assets/javascripts/bootstrap.js"
       ]
-        }
-    },
-    "devDependencies": {
-        "chai": "~3.4.2",
-        "mocha": "~2.3.4",
-        "modernizr": "^3.3.1"
     }
+  },
+  "devDependencies": {
+    "chai": "~3.4.2",
+    "mocha": "~2.3.4",
+    "modernizr": "^3.3.1"
+  }
 }

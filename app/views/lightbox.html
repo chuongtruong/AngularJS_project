@@ -4,89 +4,93 @@
 
         <video controls autoplay class="img-responsive" ng-show="isVideo">
             <source ng-src="{{trustSrc(item.path)}}" type="video/mp4">
+            <source ng-src="{{trustSrc(item.path)}}" type="video/ogg">
+            <source ng-src="{{trustSrc(item.path)}}" type="video/webm">
         </video>
 
         <audio controls class="img-responsive" ng-show="isAudio">
-            <source ng-src="{{trustSrc(item.path)}}" type="audio/mp4">
             <source ng-src="{{trustSrc(item.path)}}" type="audio/wav">
             <source ng-src="{{trustSrc(item.path)}}" type="audio/mp3">
+            <source ng-src="{{trustSrc(item.path)}}" type="audio/mpeg">
+            <source ng-src="{{trustSrc(item.path)}}" type="audio/ogg">
         </audio>
+    </div>
 
-        <div class="container-fluid modal-body">
+    <div class="container-fluid modal-body">
 
-            <div class="comment-area col-lg-8 col-md-8 col-xs-12">
-                <div class="title_des">
-                    <h3>{{item.title}}</h3>
-                    <hr>
-                    <p>{{item.description}}</p>
-                </div>
+        <div class="comment-area col-lg-8 col-md-8 col-xs-12">
+            <div class="title_des">
+                <h3>{{item.title}}</h3>
                 <hr>
-                <div class="like_comment">
-                    <ul>
-                        <li>
-                            <a>
-                                <span class="glyphicon glyphicon-heart"></span>Like
-                            </a>
-                        </li>
-                        <li>
-                            <!--
+                <p>{{item.description}}</p>
+            </div>
+            <hr>
+            <div class="like_comment">
+                <ul>
+                    <li>
+                        <a>
+                            <span class="glyphicon glyphicon-heart"></span>Like
+                        </a>
+                    </li>
+                    <li>
+                        <!--
             <a>
               <span class="glyphicon-red glyphicon-heart"></span>Like
             </a>
           </li>
 -->
-                            <li>
-                                <a>
-                                    <span class="glyphicon glyphicon-comment"></span>Comment
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <span class="glyphicon glyphicon-download"></span>Download
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <span class="glyphicon glyphicon-share"></span>Share
-                                </a>
-                            </li>
-                    </ul>
+                        <li>
+                            <a>
+                                <span class="glyphicon glyphicon-comment"></span>Comment
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="glyphicon glyphicon-download"></span>Download
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span class="glyphicon glyphicon-share"></span>Share
+                            </a>
+                        </li>
+                </ul>
 
-                </div>
-                <hr>
-                <div class="comment-form">
-                    <form>
-                        <input class="comment-input" type="text" placeholder="What is your opinion?" ng-model="cmt" />
-                        <button class="comment-submit" type="submit" ng-click="comment()">Send</button>
-                    </form>
-                </div>
-                <hr>
-                <div class="comment-area-2" ng-repeat="comment in item.comments">
-                    <ul>
-                        <li style="font-weight:bolder">
-                            {{comment.username}}
-                        </li>
-                        <li style="font-style: italic">
-                            {{comment.comment }}
-                        </li>
-                    </ul>
-                </div>
             </div>
-            <div class="exif-area col-lg-4 col-md-4 col-xs-12">
-                <h3>Photo Exif</h3>
-                <hr>
+            <hr>
+            <div class="comment-form">
+                <form>
+                    <input class="comment-input" type="text" placeholder="What is your opinion?" ng-model="cmt" />
+                    <button class="comment-submit" type="submit" ng-click="comment()">Send</button>
+                </form>
+            </div>
+            <hr>
+            <div class="comment-area-2" ng-repeat="comment in item.comments">
                 <ul>
-
-                    <li>
-                        <span style="font-weight: bolder">File ID:</span> {{item.fileId}}
+                    <li style="font-weight:bolder">
+                        {{comment.username}}
                     </li>
-                    <li>
-                        <span style="font-weight: bolder">Type:</span> {{item.type}}
-                    </li>
-
-                    <li>
-                        <span style="font-weight: bolder">Comments:</span> {{item.comments.length}}
+                    <li style="font-style: italic">
+                        {{comment.comment }}
                     </li>
                 </ul>
             </div>
         </div>
+        <div class="exif-area col-lg-4 col-md-4 col-xs-12">
+            <h3>Photo Exif</h3>
+            <hr>
+            <ul>
+
+                <li>
+                    <span style="font-weight: bolder">File ID:</span> {{item.fileId}}
+                </li>
+                <li>
+                    <span style="font-weight: bolder">Type:</span> {{item.type}}
+                </li>
+
+                <li>
+                    <span style="font-weight: bolder">Comments:</span> {{item.comments.length}}
+                </li>
+            </ul>
+        </div>
+    </div>

@@ -1,3 +1,9 @@
+<script>
+    $('.nav a').on('click', function(){
+    $('.btn-navbar').click(); //bootstrap 2.x
+    $('.navbar-toggle').click() //bootstrap 3.x by Richard
+});
+</script>
 <!-- header -->
 <header>
 
@@ -68,13 +74,13 @@
                                 <p class="upload-instruct">You want to upload</p>
                             </li>
                             <li class="divider"></li>
-                            <a>
+                            <a ui-sref="uploadEdit">
                                 <li>Photo</li>
                             </a>
-                            <a>
+                            <a ui-sref="editVideo">
                                 <li>Video</li>
                             </a>
-                            <a>
+                            <a ui-sref="editAudio">
                                 <li>Audio</li>
                             </a>
                         </ul>

@@ -18,6 +18,7 @@ angular.module('myApp')
         $scope.trustSrc = function (path) {
             return $sce.trustAsResourceUrl(MediaService.mediaUrl + path);
         };
+<<<<<<< HEAD
 
         $scope.showImage = true;
         $scope.showAudio = true;
@@ -56,6 +57,47 @@ angular.module('myApp')
             $scope.showAudio = false;
             $scope.showVideo = true;
         };
+=======
+    
+    $scope.showImage = true;
+    $scope.showAudio = true;
+    $scope.showVideo = true;
+    
+    $scope.setView = function(arg1, arg2, arg3) {
+        arg1 = true;
+        arg2 = false;
+        arg3 = false;
+    };
+    
+//    $scope.getImage = $scope.setView($showImage, showAudio, showVideo);
+//    
+//    $scope.getVideo = $scope.setView(showVideo, showAudio, showImage);
+//    
+//    $scope.getAudio = $scope.setView(showAudio, showImage, showVideo);
+//  
+    // var showImage, showAudio, showVideo;
+    $scope.showing = '';
+    $scope.getImage = function() {
+        $scope.showImage = true;
+        $scope.showAudio = false;
+        $scope.showVideo = false;
+        $scope.showing = 'image';
+    };
+    
+        $scope.getAudio = function() {
+        $scope.showImage = false;
+        $scope.showAudio = true;
+        $scope.showVideo = false;
+        $scope.showing = 'audio';    
+    };
+    
+        $scope.getVideo = function() {
+        $scope.showImage = false;
+        $scope.showAudio = false;
+        $scope.showVideo = true;
+        $scope.showing = 'video';
+    };
+>>>>>>> Hyesoo3
 
         $scope.trsVideoThumbSrc = function (path) {
             return $sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path + '.png');

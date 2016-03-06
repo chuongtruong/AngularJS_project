@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ["ui.router", "ui.bootstrap"]);
+var app = angular.module("myApp", ["ui.router", "ui.bootstrap", "ngCordova"]);
 //"controllerModule" we can delete
 
 
@@ -44,6 +44,19 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             parent: 'app',
             url: "/uploadEdit",
             templateUrl: 'views/uploadEdit.html'
+        })
+        .state('editVideo', {
+            parent: 'app',
+            url: "/editVideo",
+            templateUrl: 'views/editVideo.html',
+            controller: 'VideoRecordController'
+        })
+        .state('editAudio', {
+            replace: true,
+            parent: 'app',
+            url: "/editAudio",
+            templateUrl: 'views/editAudio.html',
+            controller: 'SoundRecordController'
         })
         .state('signup', {
             parent: 'app',
