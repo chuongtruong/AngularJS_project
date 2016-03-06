@@ -1,80 +1,17 @@
-<!--
-<ul class="searchFiles" ng-controller="searchController">
-    <li ng-repeat="file in results">
-        <h5>{{file.title}}</h5>
-        <p>{{file.path}}</p>
-    </li>
-</ul>
--->
-
-<!--
-<ul class="searchResult">
-    <li ng-repeat="file in results">
-        <h5>{{file.title}}</h5>
-        <p>{{file.path}}</p>
-    </li>
-</ul>
--->
-
-
-    
-<!--
 <style>
     .active {
-        color : red;
-        background-color: red;
-    }
-</style>
--->
-
-    <style>
-    .active {
-        border:1px solid #000;
-        background-color:#fff;
-        color:#000;
-        width:300px;
+        border: 1px solid #000;
+        background-color: #fff;
+        color: #000;
+        width: 300px;
         height: 100px;
         overflow-y: scroll;
     }
-    </style>
-
-
-<!--
-<script>
-    $("a").click(function() {
-        if ($(this).hasClass('active')){
-            $(this).css('background-color', 'blue');
-        } else {
-            $(this).css('background-color', 'black');
-        }
-    });    
-</script>
--->
+</style>
 
 <!-- Second nav-->
 <div align="center" class="container-fluid sticky-nav">
     <ul class="sticky-nav-menu row">
-<<<<<<< HEAD
-        
-        <li ng-show="showImage">
-            <a ng-click="getImage()">Photo</a>
-        </li>
-        
-        <li class="isActive" ng-show="!showImage">
-            <a ng-click="getImage()">Photo</a>
-        </li>
-        
-        <li ng-show="showVideo">
-            <a ng-click="getVideo()">Video</a>
-        </li>
-        
-        <li class="isActive" ng-show="!showVideo">
-            <a ng-click="getImage()">Video</a>
-        </li>
-        
-        <li ng-show="showAudio">
-            <a ng-click="getAudio()">Sound</a>
-=======
         <li><span class="glyphicon glyphicon-picture"></span>
             <a ng-click="getImage()" ng-class="{active:showing == 'image'}"><span ng-bind="keyword"></span></a>
         </li>
@@ -83,9 +20,7 @@
         </li>
         <li><span class="glyphicon glyphicon-headphones"></span>
             <a ng-click="getAudio()" ng-class="{active:showing == 'audio'}"><span ng-bind="keyword"></span></a>
->>>>>>> Hyesoo3
         </li>
-        
         <li class="isActive" ng-show="!showSound">
             <a ng-click="getImage()">Sound</a>
         </li>
@@ -106,36 +41,18 @@
     <!--            <div ng-if="file.type == 'audio'">-->
     <section id="audio-result" ng-if="showAudio">
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-click="open(audio)" ng-repeat="audio in audios">
-                <video controls class="img" poster="/images/audioIcon1.png">
-                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp4">
-                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/wav">
-                    <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp3">
-                </video>
-            </div>
+            <video controls class="img" poster="/images/audioIcon1.png">
+                <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp4">
+                <source ng-src="{{trustSrc(audio.path)}}" type="audio/wav">
+                <source ng-src="{{trustSrc(audio.path)}}" type="audio/mp3">
+            </video>
+        </div>
     </section>
 
- <section id="video-result" ng-if="showVideo">>
-    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-click="open(video)" ng-repeat="video in videos">
-        <!--            <div ng-if="file.type == 'video'">-->
+    <section id="video-result" ng-if="showVideo">>
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-click="open(video)" ng-repeat="video in videos">
+            <!--            <div ng-if="file.type == 'video'">-->
             <img class="img" ng-src="{{trsVideoThumbSrc(video.path)}}" />
         </div>
     </section>
-</div>
-
-
-
-<!--
-                <video controls class="img">
-                    <source ng-src="{{trsVideoThumbSrc(file.path)}}" type="video/mp4">
-                </video>
--->
-<!--            </div>-->
-<!--                            <div class="img" ng-attr-style="background-image:url({{trustSrc(file.path)}});"></div>-->
-<!--
-            <div class="img" ng-attr-style="background-image:url({{trustSrc(file.fileId)}});"></div>
--->
-
-</div>
-</div>
-</div>
 </div>
