@@ -9,14 +9,14 @@ angular.module('myApp')
 //        "email": $scope.email
 //      };
 
-    .controller('registerController', ['$scope', 'AjaxFactory', function ($scope, AjaxFactory,$state) {
+    .controller('registerController', ['$scope', 'AjaxFactory', '$state',function ($scope, AjaxFactory,$state) {
 
         //    app.controller('TestCtrl2', ['$scope', '$controller', function ($scope, $controller) {
         //   var testCtrl1ViewModel = $scope.$new(); //You need to supply a scope while instantiating.
         //   //Provide the scope, you can also do $scope.$new(true) in order to create an isolated scope.
         //   //In this case it is the child scope of this scope.
         //   $controller('TestCtrl1',{$scope : testCtrl1ViewModel });
-        //   testCtrl1ViewModel.myMethod(); //And call the method on the newScope.
+       //   testCtrl1ViewModel.myMethod(); //And call the method on the newScope.
         //}]);
 
         $scope.register = function () {

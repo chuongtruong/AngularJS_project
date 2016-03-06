@@ -37,7 +37,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('sound', {
             parent: 'app',
             url: "/sound",
-            templateUrl: 'sound.html',
+            templateUrl: 'views/sound.html',
             controller: 'audioController'
         })
         .state('uploadEdit', {
