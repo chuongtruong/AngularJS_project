@@ -17,7 +17,7 @@ angular.module('myApp')
                     $scope.videos.push(file);
                 }
             });
-            console.log($scope.videos);
+            
         }, function (err) {
             console.log("err", err);
         });

@@ -1,61 +1,77 @@
 angular.module('myApp')
-  .controller('searchResultController', function($scope, $sce, $stateParams, MediaService, metaService) {
 
-    $scope.mediaFiles = [];
-    $scope.trustSrc = function(path) {
-      return $sce.trustAsResourceUrl(MediaService.mediaUrl + path);
-    };
+.controller('searchResultController', function($scope, $sce, $stateParams, MediaService, metaService) {
+  $scope.photos = [];
+  $scope.audios = [];
+  $scope.videos = [];
+  //$scope.mediaFiles = [];
+  $scope.trustSrc = function(path) {
+    return $sce.trustAsResourceUrl(MediaService.mediaUrl + path);
+  };
 
-    $scope.trsVideoThumbSrc = function(path) {
-      return $sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path + '.png');
-    };
+  $scope.showImage = true;
+  $scope.showAudio = true;
+  $scope.showVideo = true;
 
-    $scope.trsImageThumbSrc = function(path) {
-      return $sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path);
-    };
+  $scope.getImage = function() {
+    $scope.showImage = true;
+    $scope.showAudio = false;
+    $scope.showVideo = false;
+  };
 
-    $scope.$on("searchSuccess", function(event, data) {
-      console.log(event);
-      console.log("in", data);
-      $scope.mediaFiles = [];
-      if (data.length == 0) {
-        console.log("test");
-        alert("No result found with this keyword!");
-      }
-      data.forEach(function(file) { // check each file inside the array
+  $scope.getAudio = function() {
+    $scope.showImage = false;
+    $scope.showAudio = true;
+    $scope.showVideo = false;
+  };
 
-        var fileId = file.fileId;
+  $scope.getVideo = function() {
+    $scope.showImage = false;
+    $scope.showAudio = false;
+    $scope.showVideo = true;
+  };
+
+  $scope.mediaFiles = [];
+  $scope.trustSrc = function(path) {
+    return $sce.trustAsResourceUrl(MediaService.mediaUrl + path);
+  };
+
+  $scope.trsVideoThumbSrc = function(path) {
+    return $sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path + '.png');
+  };
+
+  $scope.trsImageThumbSrc = function(path) {
+    return $sce.trustAsResourceUrl(MediaService.mediaThumbUrl + path);
+  };
+
+  $scope.$on("searchSuccess", function(event, data) {
+
+    $scope.photos = [];
+    $scope.audios = [];
+    $scope.videos = [];
+    //$scope.mediaFiles = [];
+    if (data.length == 0) {
+
+      alert("No result found with this keyword!");
+    }
+
+    data.forEach(function(file) {
+      if (file.type === "image") {
         metaService.getComments(file);
         metaService.getDesc(file);
-        $scope.mediaFiles.push(file);
-      });
-    }, function(err) {
-      console.log("err", err);
+        $scope.photos.push(file);
+      } else if (file.type === "audio") {
+        metaService.getComments(file);
+        metaService.getDesc(file);
+        $scope.audios.push(file);
+      } else if (file.type === "video") {
+        metaService.getComments(file);
+        metaService.getDesc(file);
+        $scope.videos.push(file);
+      }
     });
-    $scope.open = metaService.openModal;
+  }, function(err) {
+    console.log("err", err);
   });
-
-//        $scope.photos = [];
-//        $scope.audios = [];
-//        $scope.videos = [];
-//            $scope.results = [];
-//
-//            for (var i = 0; i < data.length; i++) {
-//                $scope.results.push(
-//                    {
-//                        'fileId':data[i].fileId,
-//                        'path':data[i].path
-//                    }
-//                );
-//            }
-//console.log("$scope.results",$scope.results);
-//            $scope.results.forEach(function (file) {
-//                if (file.type === "image") {
-//                    $scope.photos.push(file);
-//                }else if(file.type === "audio"){
-//                    $scope.audios.push(file);
-//                }else if(file.type === "video"){
-//                    $scope.videos.push(file);
-//                }
-//            });
-//            console.log($scope.photos);
+  $scope.open = metaService.openModal;
+});

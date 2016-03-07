@@ -8,6 +8,7 @@ angular.module('myApp')
     $scope.isImg = false;
     $scope.isAudio = false;
     $scope.isVideo = false;
+    
     $scope.isLiked = false;
 
     $scope.trustSrc = function(path) {
@@ -23,14 +24,7 @@ angular.module('myApp')
     if (item.type === "video") {
       $scope.isVideo = true;
     };
-
-
-
-    console.log("isLiked", $scope.isLiked);
-
-    console.log("itemID", $rootScope.itemID);
-    console.log("userID, ", localStorage.getItem("userID"));
-
+    
     $scope.animationsEnabled = true;
 
     $scope.toggleAnimation = function() {
@@ -50,7 +44,6 @@ angular.module('myApp')
     var userId = localStorage.getItem("userID");
     var request = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/likes/user/' + userId);
     request.then(function(res) {
-      console.log("res", res);
       res.data.forEach(function(file) {
         if ($rootScope.itemID === file.fileId) {
           $scope.isLiked = true;
@@ -62,7 +55,6 @@ angular.module('myApp')
       var request = AjaxFactory.unlike();
       request.then(function(response) {
         $scope.isLiked = false;
-        console.log(response);
       });
     };
 
@@ -70,7 +62,6 @@ angular.module('myApp')
       var request = AjaxFactory.like();
       request.then(function(response) {
         $scope.isLiked = true;
-        console.log("status", response.data.status);
       });
     };
 
@@ -79,13 +70,10 @@ angular.module('myApp')
         'user': localStorage.getItem("userID"),
         'comment': $scope.cmt
       };
-      console.log('data', data);
 
       var request = AjaxFactory.comment(data);
 
       request.then(function(response) {
-        console.log(response.data);
-        console.log(response.data.status);
         var newComment = {
           'username': localStorage.getItem("username"),
           'comment': $scope.cmt

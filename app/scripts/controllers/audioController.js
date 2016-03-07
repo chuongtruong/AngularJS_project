@@ -18,7 +18,6 @@ angular.module('myApp')
                     $scope.audios.push(file);
                 }
             });
-            console.log($scope.audios);
         }, function (err) {
             console.log("err", err);
         });

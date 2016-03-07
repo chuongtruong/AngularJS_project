@@ -1,7 +1,6 @@
 angular.module('myApp')
 
-    .controller('registerController', ['$scope', 'AjaxFactory', '$location', function ($scope, AjaxFactory, $location) {
-
+    .controller('registerController', ['$scope', 'AjaxFactory', '$state',function ($scope, AjaxFactory,$state) {
 
         $scope.register = function () {
             var data = {
@@ -26,8 +25,7 @@ angular.module('myApp')
                         console.log(response.data.status);
                         if (response.data.status === "login ok") {
                             localStorage.setItem("userID", response.data.userId);
-                            $location.path('/signupSuccess');
-                            console.log($location.path());
+                            $state.go('home');
                         }
                     }, function (error) {
                         console.log(error.data);

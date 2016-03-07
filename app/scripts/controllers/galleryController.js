@@ -12,7 +12,7 @@ angular.module('myApp')
           $scope.photos.push(file);
         }
       });
-      console.log($scope.photos);
+     
     }, function(err) {
       console.log("err", err);
     });

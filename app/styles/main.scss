@@ -8,6 +8,41 @@ $icon-font-path:"../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 // your own css/scss
 // your own css/scss ends
 // Logo
+
+
+
+@media (max-width: 1250px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
 .fontLatoStyle {
   font-family: Lato;
 }
@@ -47,12 +82,12 @@ $icon-font-path:"../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
   text-transform: uppercase;
   font-size: 18px;
 }
-@media only screen and (min-width: 800px) {
-  .navbar-inverse .navbar-nav > li > a[class*="title"] {
+@media only screen and (max-width: 1000px) {
+  .navbar-nav > li > a[class*="title"] {
     display: none;
   }
 }
-//@media only screen and (max-width: 800px) {
+//@media only screen and (max-width: 1250px) {
 //    .navbar-right {
 //        width: 50%;
 //        float: right;
@@ -124,18 +159,25 @@ $icon-font-path:"../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
   text-transform: uppercase;
   font-weight: 500;
   font-size: 18px;
-  padding: 2% 1.5% 2% 1.5%;
+  padding: 1.5% 2% 1.5% 2%;
 }
 .sticky-nav-menu {
-  margin-bottom: 1.5%;
-  margin-top: 1.5%;
+  padding: 1.5% 0 1.5% 0;
   padding-left: 0;
+  margin-bottom: 0.3%;
 }
-.sticky-nav ul {
-  margin: 1% 0 1% 0;
+
+sticky-nav-menu ul{
+    margin-top: 1%;
+    margin-bottom: 1.3%;
+}
+
+.search-active {
+  font-weight: 900;
+    border-bottom: 5px solid #CA6E6E;
 }
 .sticky-nav ul li a {
-  color: #666767;
+//  color: #666767;
   text-decoration: none;
   background-color: white;
 }
@@ -160,15 +202,15 @@ $icon-font-path:"../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
   padding-right: 45px;
   padding-bottom: 60px;
 }
-//Footer
-footer {
-  background-color: #ffffff;
-  font-family: Lato;
-  line-height: 10px;
+
+.fullscreen-bg_video{
+width: 100%;
+height: 100%;
 }
-.intro {
-  font-weight: bold;
-}
+
+
+
+
 //*********index.html*******
 .glyphiconSty {
   font-size: 35px;
@@ -193,12 +235,12 @@ iframe {
   margin-top: 30px;
   margin-bottom: 20px;
 }
-.footer {
-  background-color: darkturquoise;
-  color: azure;
-  font-size: 1.2em;
-}
+
 //**** edit image in uploadModal.html
+
+.img-edittor{
+    padding: 0 20%;
+}
 .conMargin {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -259,7 +301,7 @@ label {
 .inputfile + label * {
   pointer-events: none;
 }
-#fileForm {
+.file-Form {
   margin-left: auto;
   margin-right: auto;
 }
@@ -583,4 +625,22 @@ form .comment-submit {
   .thumbnail {
     width: 50%;
   }
+}
+
+
+.load-more-btn{
+    
+    margin:auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display:block;
+    background-color: #5D5D5D;
+    padding: 1% 2% 1% 2%;
+    font-weight: 500;
+    
+}
+
+.load-more-btn:hover{
+    background-color: #ef935d;
+    border: 1px solid #ef935d;
 }

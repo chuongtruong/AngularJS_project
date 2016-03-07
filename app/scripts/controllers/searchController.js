@@ -1,31 +1,28 @@
 angular.module('myApp')
-    .controller('searchController', ['$scope', 'AjaxFactory', '$timeout', '$state', '$rootScope', function ($scope, AjaxFactory, $timeout, $state, $rootScope) {
-        var timeout;
+  .controller('searchController', ['$scope', 'AjaxFactory', '$timeout', '$state', '$rootScope',
+    function($scope, AjaxFactory, $timeout, $state, $rootScope) {
+      var timeout;
 
-        $scope.results = {};
+      $scope.results = {};
+        $rootScope.keyword="";
 
-        $scope.search = function (title) {
-            if (timeout) { //if there is already a timeout in process cancel it
-                $timeout.cancel(timeout);
-            }
-            console.log("title",title);
-            timeout = $timeout(function () {
-                var request = AjaxFactory.search(title);
-                request.then(function (response) {
-                    // console.log("response", response);
-                    console.log("response", response.data);
-                    $state.go('searchResult');
-                    $rootScope.$broadcast("searchSuccess", response.data);
-                    console.log("Response data", response.data);
-                    
-                    //                    if (!title === response.data.title) {
-                    //                        alert("The title is not matched");
-                    //                    }
-                }, function (error) {
-                    console.log(error.data);
-                });
-            }, 700);
-        };
+      $scope.search = function(title) {
+        $timeout.cancel(timeout);
+        timeout = $timeout(function() {
+          var request = AjaxFactory.search(title);
+            $rootScope.keyword = title;
+          request.then(function(response) {
+              $state.go('searchResult');
+              $timeout(function() {
+                $rootScope.$broadcast("searchSuccess", response.data);
+              });
+            },
+            function(error) {
+              console.log(error.data);
+            });
+        }, 700);
+      };
 
 
-    }]);
+    }
+  ]);

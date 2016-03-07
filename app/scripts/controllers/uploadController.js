@@ -1,25 +1,26 @@
 angular.module('myApp')
   .controller('uploadController', function($scope, AjaxFactory, $state) {
-
-    $scope.fileName = 'Chose a file';
-    console.log($scope.fileName);
-
+    $scope.label = 'Choose a file';
     $scope.setMediaFile = function(element) {
+      // get the image file from element
+      // start to put the file into canvas element
+      // fileReader
+      // onload
+
+      
 
       var reader = new FileReader();
       reader.onload = function(e) {
         //set image src
         $scope.image.src = e.target.result;
       };
-
+      $scope.label = element.files[0].name;
+      $scope.$digest();
       reader.readAsDataURL(element.files[0]);
-      console.log(element);
-      console.log(element.files[0]);
       $scope.image.onload = $scope.resetImage;
 
       //keep an image info
       $scope.fileName = element.files[0].name;
-      console.log($scope.fileName);
       $scope.mimeType = element.files[0].type;
       $scope.type = $scope.mimeType.substr(0, 5);
 
@@ -50,7 +51,11 @@ angular.module('myApp')
     $scope.init();
 
     $scope.resetImage = function() {
+      //when image data is loaded,(after onload)
+      //put the data into canvas element
 
+      // when image data is loaded, (after onload)
+      // set size of canvas to match image size
       $scope.canvas.height = $scope.image.height;
       $scope.canvas.width = $scope.image.width;
 
@@ -69,8 +74,10 @@ angular.module('myApp')
 
     // Generic method for resetting image, applying filters and updating canvas
     $scope.applyFilters = function() {
+      if($scope.image.width === 0 || $scope.image.height === 0){
+          return;
+      }
       $scope.resetImage();
-
       adjustBrightness();
       adjustContrast();
       tint();
@@ -79,24 +86,33 @@ angular.module('myApp')
         setVignette();
       }
 
+      //saveImage();
+
       $scope.ctx.clearRect(0, 0, $scope.canvas.width, $scope.canvas.height);
       $scope.ctx.putImageData($scope.imageData, 0, 0);
     };
 
     var adjustBrightness = function() {
+      //$scope.resetImage();
+      //$scope.imageData = $scope.ctx.getImageData(0, 0, $scope.canvas.width, $scope.canvas.height);
+      //$scope.pixels = $scope.imageData.data;
+      //$scope.numPixels = $scope.imageData.width * $scope.imageData.height;
+
       var brightInt = parseInt($scope.brightness);
       for (var i = 0; i < $scope.numPixels; i++) {
         $scope.pixels[i * 4] += brightInt;
         $scope.pixels[i * 4 + 1] += brightInt;
         $scope.pixels[i * 4 + 2] += brightInt;
       }
-
+      //$scope.ctx.clearRect(0, 0, $scope.canvas.width, $scope.canvas.height);
+      //$scope.ctx.putImageData($scope.imageData, 0, 0);
     };
 
     var adjustContrast = function() {
-
+      // type of input field value is string and must be parsed to float to make
+      // numeric calculations instead of string concatenation
       var contrastFloat = parseFloat($scope.contrast);
-
+      // iterate through pixel array and modify rgb values of each pixel one by one
       for (var i = 0; i < $scope.numPixels; i++) {
         $scope.pixels[i * 4] = ($scope.pixels[i * 4] - 128) * contrastFloat + 128; // Red
         $scope.pixels[i * 4 + 1] = ($scope.pixels[i * 4 + 1] - 128) * contrastFloat + 128; // Green
@@ -133,7 +149,6 @@ angular.module('myApp')
     };
 
     var setVignette = function() {
-      //console.log($scope.vignData.data);
 
       //Po = Pi * Pv /255;
       for (var i = 0; i < $scope.numPixels; i++) {
@@ -169,36 +184,8 @@ angular.module('myApp')
     $scope.sendImage = function() {
       var fd = new FormData(document.getElementById('fileForm'));
       fd.append('user', localStorage.getItem("userID"));
-      //console.log(localStorage.getItem("userID")); ==> upload without login, sending a message
       fd.append('type', $scope.type);
-      //console.log($scope.type);
-      fd.append('mime-type', $scope.mimeType);
-      //console.log($scope.mimeType);
-
-      //console.log($scope.dataURItoBlob($scope.saveImage()));
-
-      $scope.dataURItoBlob = function(dataURI) {
-        // convert base64/URLEncoded data component to raw binary data held in a string
-        var byteString;
-        if (dataURI.split(',')[0].indexOf('base64') >= 0) {
-          byteString = atob(dataURI.split(',')[1]);
-        } else {
-          byteString = decodeURI(dataURI.split(',')[1]);
-        }
-        // separate out the mime component
-        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-
-        // write the bytes of the string to a typed array
-        var ia = new Uint8Array(byteString.length);
-        for (var i = 0; i < byteString.length; i++) {
-          ia[i] = byteString.charCodeAt(i);
-        }
-
-        return new Blob([ia], {
-          type: mimeString
-        });
-      };
-
+      fd.append('file', $scope.dataURItoBlob($scope.canvas.toDataURL('image/png')), 'filename.png');
       var request = AjaxFactory.uploadFile(fd);
       request.then(function(response) {
         alert("file Uploaded");
@@ -209,6 +196,27 @@ angular.module('myApp')
         alert(error.data);
       });
     };
-  });
 
-//End of editing
+    $scope.dataURItoBlob = function(dataURI) {
+      // convert base64/URLEncoded data component to raw binary data held in a string
+      var byteString;
+      if (dataURI.split(',')[0].indexOf('base64') >= 0) {
+        byteString = atob(dataURI.split(',')[1]);
+      } else {
+        byteString = decodeURI(dataURI.split(',')[1]);
+      }
+      // separate out the mime component
+      var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+      // write the bytes of the string to a typed array
+      var ia = new Uint8Array(byteString.length);
+      for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+
+      return new Blob([ia], {
+        type: mimeString
+      });
+    };
+
+  });

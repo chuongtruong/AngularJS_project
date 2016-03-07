@@ -1,0 +1,9 @@
+<div infinite-gallery>
+    <div ng-click="open(video)" repeat-done ng-repeat="video in videos">
+        <a ng-if="video.type == 'video'">
+            <img alt="{{video.title}}" ng-src="{{trsVideoThumbSrc(video.path)}}" />
+        </a>
+    </div>
+
+
+</div>
