@@ -1,42 +1,42 @@
 angular.module('myApp')
-    .factory('metaService', function ($http, $uibModal) {
+  .factory('metaService', function($http, $uibModal) {
 
-        var metaFunctions = {};
+    var metaFunctions = {};
 
-        metaFunctions.getComments = function (file) {
-            var fileId = file.fileId;
-            var cmtRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/comments/file/' + fileId);
-            file.comments = [];
-            cmtRequest.then(function (cmtRes) {
-                cmtRes.data.forEach(function (cmt) {
-                    file.comments.push(cmt);
-                });
-            });
-        };
+    metaFunctions.getComments = function(file) {
+      var fileId = file.fileId;
+      var cmtRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/comments/file/' + fileId);
+      file.comments = [];
+      cmtRequest.then(function(cmtRes) {
+        cmtRes.data.forEach(function(cmt) {
+          file.comments.push(cmt);
+        });
+      });
+    };
 
-        metaFunctions.getDesc = function (file) {
-            var fileId = file.fileId;
-            var desRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/file/' + fileId);
-            file.description = "";
-            desRequest.then(function (desRes) {
-                file.description = desRes.data.description;
-            });
-        };
+    metaFunctions.getDesc = function(file) {
+      var fileId = file.fileId;
+      var desRequest = $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/file/' + fileId);
+      file.description = "";
+      desRequest.then(function(desRes) {
+        file.description = desRes.data.description;
+      });
+    };
 
-        metaFunctions.openModal = function (file) {
-                console.log("here");
-                var modalInstance = $uibModal.open({
-                    animation: this.animationsEnabled,
-                    templateUrl: '../../views/lightbox.html',
-                    controller: 'lightboxController',
-                    size: 'lg',
-                    resolve: {
-                        item: function () {
-                            return file;
-                        }
-                    }
-
-                });
-            };
-        return metaFunctions;
-    });
+    metaFunctions.openModal = function(file) {
+      console.log("here");
+      var modalInstance = $uibModal.open({
+        animation: this.animationsEnabled,
+        template: "",
+        controller: 'lightboxController',
+        size: 'lg',
+        resolve: {
+          item: function() {
+            return file;
+          }
+        },
+        template: "<div class='photo-area col-lg-12 col-md-12 col-xs-12'><img class='img-responsive' ng-src='http://util.mw.metropolia.fi/uploads/{{item.path}}' ng-show='isImg' /><video controls class='img-responsive' ng-show='isVideo'><source ng-src='{{trustSrc(item.path)}}' type='video/mp4'><source ng-src='{{trustSrc(item.path)}}' type='video/mp4'><source ng-src='{{trustSrc(item.path)}}' type='video/ogg'><source ng-src='{{trustSrc(item.path)}}' type='video/webm'></video><audio controls class='img-responsive' ng-show='isAudio'><source ng-src='{{trustSrc(item.path)}}' type='audio/wav'><source ng-src='{{trustSrc(item.path)}}' type='audio/mp3'><source ng-src='{{trustSrc(item.path)}}' type='audio/mpeg'><source ng-src='{{trustSrc(item.path)}}' type='audio/ogg'></audio></div><div class='container-fluid modal-body'><div class='comment-area col-lg-8 col-md-8 col-xs-12'><div class='title_des'><h3>{{item.tistle}}</h3><hr><p>{{item.description}}</p></div><hr><div class='like_comment'><ul><li><a ng-click='like()' ng-hide='isLiked'><span class='glyphicon glyphicon-heart'></span>Like</a></li><li><a ng-click='unlike()' ng-show='isLiked'><span class='glyphicon glyphicon-heart red-heart'></span>Like</a></li><li><a><span class='glyphicon glyphicon-comment'></span>Comment</a></li><li><a href='{{trustSrc(item.path)}}' download='{{item.filename}}'><span class='glyphicon glyphicon-download'></span>Download</a></li><li><a><span class='glyphicon glyphicon-share'></span>Share</a></li></ul></div><hr><div class='comment-form'><form><input class='comment-input' type='text' placeholder='What is your opinion?' ng-model='cmt' /><button class='comment-submit' type='submit' ng-click='comment()'>Send</button></form></div><hr><div class='comment-area-2' ng-repeat='comment in item.comments'><ul><li style='font-weight:bolder'>{{comment.username}}</li><li style='font-style: italic'>{{comment.comment }}</li></ul></div></div><div class='exif-area col-lg-4 col-md-4 col-xs-12'><h3><span style='text-transform: uppercase'>{{item.type}}</span> Exif</h3><hr><ul><li><span style='font-weight: bolder'>File ID:</span> {{item.fileId}}</li><li><span style='font-weight: bolder'>Type:</span> {{item.type}}</li><li><span style='font-weight: bolder'>Comments:</span> {{item.comments.length}}</li></ul></div></div>"
+      });
+    };
+    return metaFunctions;
+  });
