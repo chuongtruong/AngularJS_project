@@ -61,5 +61,32 @@ angular.module('myApp')
                 }
             });
         };
+
+        ajaxFunctions.saveMedia = function (args, win, fail) {
+            var fileURL = args.url;
+
+            var options = new FileUploadOptions();
+            options.fileKey = 'file';
+            options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+            options.mimeType = args.mimeType;
+
+            var params = {};
+            params.user = args.user;
+            params.type = args.type;
+            params.httpMethod = 'POST';
+            params.title = args.title;
+            params.description = args.description;
+
+            options.params = params;
+
+            options.headers = {
+                Connection: 'close'
+            };
+            options.chunkedMode = false;
+
+            var ft = new FileTransfer();
+            ft.upload(fileURL, encodeURI(urlBase + 'upload'), win, fail, options, true);
+        };
+
         return ajaxFunctions;
     });
