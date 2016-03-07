@@ -236,7 +236,22 @@ iframe {
 }
 
 //**** edit image in uploadModal.html
+.upload-button{
+    
+    margin:auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display:block;
+    background-color: #5D5D5D;
+    padding: 1% 2% 1% 2%;
+    font-weight: 500;
+    
+}
 
+.upload-button:hover{
+    background-color: #ef935d;
+    border: 1px solid #ef935d;
+}
 .img-edittor{
     padding: 0 20%;
 }
@@ -266,7 +281,7 @@ iframe {
   position: absolute;
   z-index: -1;
 }
-.inputfile + label {
+.inputfile + label, .label-upload {
   font-size: 1.25em;
   font-weight: 700;
   color: white;
@@ -281,19 +296,24 @@ label {
   overflow: hidden;
 }
 .inputfile:focus + label,
-.inputfile + label {
+.inputfile + label, .label-upload{
   position: relative;
   margin-top: 1%;
 }
-.inputfile + label:hover {
+.inputfile + label:hover, .label-upload:hover{
   background-color: red;
   position: relative;
   margin-top: 1%;
 }
-.inputfile + label {
+.label-upload:hover, .label-upload:hover {
+  background-color: red;
+  position: relative;
+  margin-top: 1%;
+}
+.inputfile + label, .label-upload{
   cursor: pointer;
 }
-.inputfile:focus + label {
+.inputfile:focus + label, label-upload:focus {
   outline: 1px dotted #000;
   outline: -webkit-focus-ring-color auto 5px;
 }

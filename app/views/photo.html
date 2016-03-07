@@ -2,7 +2,7 @@
   <div class="container-fluid main-area">
     <div infinite-gallery>
       <a ng-click="open(photo); isLiked()" repeat-done ng-repeat="photo in photos">
-        <img class="img-thumbnail" alt="{{photo.title}}" ng-src="http://util.mw.metropolia.fi/uploads/{{photo.path}}" />
+        <img class="img-thumbnail" alt="{{photo.title}}" ng-src="http://util.mw.metropolia.fi/uploads/{{photo.thumbNails.small}}" />
       </a>
     </div>
       

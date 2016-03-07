@@ -4,6 +4,10 @@ angular.module('myApp')
     $scope.audios = [];
     $scope.videos = [];
 
+    $scope.showImage = true;
+    $scope.showAudio = true;
+    $scope.showVideo = true;
+
     $scope.trustSrc = function(path) {
       return $sce.trustAsResourceUrl(MediaService.mediaUrl + path);
     };

@@ -2,17 +2,18 @@
   <div class="main-upload">
     <div class="col-xs-12 file-Form">
       <input type="file" name="file" id="file" class="inputfile upload-item" onchange="angular.element(this).scope().setMediaFile(this)" data-multiple-caption="{count} files selected" />
+        
       <form id="fileForm" align="center">
         <canvas class="img-responsive upload-item" id="myCanvas" style="width:50%">
         </canvas>
           
-        <label class="upload-item" for="file">{{label}}</label>
+        <label class="upload-item label-upload" for="file">{{label}}</label>
         <br>
         <input class="upload-item upload-input" name="title" type="text" placeholder="Title">
         <br>
         <input class="upload-item upload-input" name="description" ng-init="desc='Default description'" ng-model="desc" type="text">
         <br>
-        <button class="btn btn-primary uploadBtnSty" ng-click="sendImage()">Upload</button>
+        <button class="btn btn-primary upload-button" ng-click="sendImage()">Upload</button>
       </form>
       <br>
     </div>
